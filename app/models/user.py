@@ -12,7 +12,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(256), nullable=False)
     email = db.Column(db.String(256), nullable=False, unique=True)
     profile_image = db.Column(db.String(256))
-    birthday = db.Column(db.Date())
+    birthday = db.Column(db.Date, nullable=False)
     about_me = db.Column(db.String(500), nullable=False)
 
     user_id_rel = db.relationship('Giftlist', backref='userId', lazy='dynamic', foreign_keys='Giftlist.user_id')

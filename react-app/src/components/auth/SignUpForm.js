@@ -6,6 +6,10 @@ import { signUp } from '../../store/session';
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
+  const [full_name, setFullname] = useState('');
+  const [birthday, setBirthday] = useState('');
+  const [profile_image, setProfileimage] = useState('');
+  const [about_me, setAboutme] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -15,7 +19,7 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, full_name, email, password, birthday, profile_image, about_me));
       if (data) {
         setErrors(data)
       }
@@ -25,6 +29,22 @@ const SignUpForm = () => {
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
+
+  const updateFullname = (e) => {
+    setFullname(e.target.value)
+  }
+
+  const updateBirthday = (e) => {
+    setBirthday(e.target.value)
+  }
+
+  const updateProfileimage = (e) => {
+    setProfileimage(e.target.value)
+  }
+
+  const updateAboutme = (e) => {
+    setAboutme(e.target.value)
+  }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -59,6 +79,15 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div>
+        <label>Full Name</label>
+        <input
+          type='text'
+          name='full_name'
+          onChange={updateFullname}
+          value={full_name}
+        ></input>
+      </div>
+      <div>
         <label>Email</label>
         <input
           type='text'
@@ -84,6 +113,35 @@ const SignUpForm = () => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+        ></input>
+      </div>
+      <div>
+        <label>Birthday</label>
+        <input
+          type='date'
+          name='birthday'
+          onChange={updateBirthday}
+          value={birthday}
+        ></input>
+      </div>
+      <div>
+        <label>Profile Image</label>
+        <input
+          type='file'
+          name='profile_image'
+          onChange={updateProfileimage}
+          value={profile_image}
+        ></input>
+      </div>
+      <div>
+        <label>About Me</label>
+        <input
+          type='text'
+          name='about_me'
+          onChange={updateAboutme}
+          value={about_me}
+          rows='4'
+          cols='50'
         ></input>
       </div>
       <button type='submit'>Sign Up</button>
