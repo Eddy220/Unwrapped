@@ -8,12 +8,17 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
-    full_name = db.Column(db.String(40), nullable=False)
-    hashed_password = db.Column(db.String(255), nullable=False)
+    full_name = db.Column(db.String(100), nullable=False)
+    hashed_password = db.Column(db.String(256), nullable=False)
     email = db.Column(db.String(256), nullable=False, unique=True)
     profile_image = db.Column(db.String(256))
     birthday = db.Column(db.Date())
     about_me = db.Column(db.String(500), nullable=False)
+
+    user_id_rel = db.relationship('Giftlist', backref='userId', lazy='dynamic', foreign_keys='Giftlist.user_id')
+
+    requester_rel = db.relationship('Friend', backref='requesterId', lazy='dynamic', foreign_keys='Friend.requester')
+    accepter_rel = db.relationship('Friend', backref='accepterId', lazy='dynamic', foreign_keys='Friend.accepter')
 
     @property
     def password(self):
