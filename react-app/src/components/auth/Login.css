@@ -1,0 +1,35 @@
+.loginFormContainer {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ededed;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+    height: auto;
+    border-radius: 5px;
+    background: #f7f7f7;
+    box-sizing:border-box;
+    padding: 20px;
+}
+
+.loginForm {
+    border: 1px solid black;
+}
+
+.navBtns {
+    text-decoration: none;
+    background-color: #457b9d;
+    color: #fffcf9;
+    border-radius: 25px;
+    border:none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-right: 10px;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    height: 10px;
+    font-family: "lemon milk";
+}
