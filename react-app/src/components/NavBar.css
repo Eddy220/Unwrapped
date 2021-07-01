@@ -21,6 +21,12 @@
     font-family: "lemon milk";
 }
 
+
+.navBtns:hover {
+    background-color: black;
+}
+
+
 .navbar {
     position: absolute;
     top: 0;
@@ -54,6 +60,14 @@
 
 .navLogo {
     color: #fffcf9;
+    /* margin-right: 20%; */
+    font-size: 40px;
+    font-family: "lemon milk"
+}
+
+
+.navLogo:hover {
+    color: black;
     /* margin-right: 20%; */
     font-size: 40px;
     font-family: "lemon milk"
@@ -104,4 +118,8 @@
     width: auto;
     height:100%;
     margin-right: 5%;
+}
+
+.navBtnsLogged:hover {
+    background-color: black;
 }
