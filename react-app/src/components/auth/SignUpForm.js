@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './SignUpForm.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -63,7 +64,8 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <div className='signupFormContainer'>
+    <form className='signupForm' onSubmit={onSignUp}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
@@ -135,17 +137,18 @@ const SignUpForm = () => {
       </div>
       <div>
         <label>About Me</label>
-        <input
+        <textarea
           type='text'
           name='about_me'
           onChange={updateAboutme}
           value={about_me}
           rows='4'
-          cols='50'
-        ></input>
+          cols='30'
+        ></textarea>
       </div>
       <button type='submit'>Sign Up</button>
     </form>
+    </div>
   );
 };
 
