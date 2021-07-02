@@ -15,8 +15,8 @@ def validation_errors_to_error_messages(validation_errors):
             errorMessages.append(f"{field} : {error}")
     return errorMessages
 
-@giftlists_routes.route('/all/user/<int:id>')
-def get_lists(id):
+@giftlists_routes.route('/all/user')
+def get_lists():
     user = current_user.id
     giftlists = Giftlist.query.filter(Giftlist.user_id == user).all()
     return {"giftlists":[giftlist.to_dict() for giftlist in giftlists] }

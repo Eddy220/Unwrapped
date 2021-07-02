@@ -14,8 +14,8 @@ const NavBar = () => {
       <nav className='navbarLogged'>
         <div className='navBtnContainerLogged'>
         <a className='navLogoLinkLogged' href="/home"><div className='navLogo'>U N W R A P P E D</div></a>
-          <NavLink to='/friends' exact={true} className='navBtnsLogged'>MY FRIENDS</NavLink>
           <NavLink to='/lists' exact={true} className='navBtnsLogged'>MY LISTS</NavLink>
+          <NavLink to='/friends' exact={true} className='navBtnsLogged'>MY FRIENDS</NavLink>
           <LogoutButton/>
         </div>
       </nav>
