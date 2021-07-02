@@ -59,3 +59,9 @@ def edit_list(id):
 @giftlists_routes.route('/deletelist/<int:id>', methods=['DELETE'])
 def delete_list(id):
     user = current_user.id
+    giftlist = Giftlist.query.filter(Giftlist.id == id).first()
+    db.session.delete(giftlist)
+    if giftlist.user_id != user:
+        return {'errors': 'Only the owner of the list can delete.'}
+    db.session.commit()
+    return {'giftlist': id}
