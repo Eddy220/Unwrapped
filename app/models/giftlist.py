@@ -9,3 +9,10 @@ class Giftlist(db.Model):
     list_name = db.Column(db.String(50), nullable=False)
 
     giftlist_user_id_rel = db.relationship('Gift', backref='giftlist_userId', lazy='dynamic', foreign_keys='Gift.list_id')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'list_name': self.list_name
+        }
