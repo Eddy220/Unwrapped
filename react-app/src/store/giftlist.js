@@ -31,13 +31,11 @@ const removeGiftlist = (payload) => ({
 // Thunks
 
 export const obtainGiftlists = (payload) => async (dispatch) => {
-    const { id } = payload
     const res = await fetch('/api/giftlists/all/user')
     const data = await res.json()
     if (data.errors) {
         return data
     }
-    console.log(data, 'hey yo')
     dispatch(getGiftlists(data))
 }
 
@@ -73,7 +71,7 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
         case ADD_GIFTLIST:
             newState = {...state}
-            newState.giftlists = action.payload
+            newState.giftlists[action.payload.id] = action.payload
             return newState
         case GET_GIFTLISTS:
             newState = {...state}

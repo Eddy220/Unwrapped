@@ -1,7 +1,58 @@
-.listsForm {
-    margin: 10%;
-}
+@font-face{
+    font-family: "lemon milk";
+    src: url("../../LEMONMILK-Regular.otf") format("truetype");
+  }
+
 
 .lists {
-    margin: 10%;
+    text-decoration: none;
+    color: #457b9d;
+}
+
+.listnames {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.listnames:hover {
+    color: #e53945;
+}
+
+.listPageContainer {
+    margin-top: 8%;
+    height: auto;
+    padding: 5%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.listContainer {
+    border: none;
+    background-color: #B1Ede8;
+    font-family: "lemon milk";
+    overflow-y: scroll;
+    height: 400px;
+    max-height: 400px;
+    width: 50%;
+    margin-right: 5%;
+    margin-left: 10%;
+    display: flex;
+    align-content:space-between
+}
+
+
+.listsFormContainer {
+    border: 1px solid red;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+    align-content: space-between;
+}
+
+.listnames {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
