@@ -10,9 +10,7 @@
 }
 
 .listnames {
-    display: flex;
-    flex-direction:column;
-    justify-content: space-between;
+    padding: 25px;
 }
 
 .listnames:hover {
@@ -20,8 +18,8 @@
 }
 
 .listPageContainer {
-    margin-top: 8%;
-    height: auto;
+    margin-top: 4%;
+    max-height:fit-content;
     padding: 5%;
     display: flex;
     align-items:center;
@@ -44,15 +42,46 @@
 
 
 .listsFormContainer {
-    border: 1px solid red;
     margin-top: 10%;
     margin-bottom: 10%;
     display: flex;
-    align-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .listnames {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.listsForm {
+    border: 2px solid lightgrey;
+    padding: 50px;
+}
+
+.listsFormInput {
+    background-color: #B1Ede8;
+    border: none;
+    margin-bottom: 10%;
+    font-family: "lemon milk";
+}
+
+.listsFormLabel {
+    margin-bottom: 10%;
+    font-family: "lemon milk";
+    color: #457b9d;
+    width: 100%;
+    margin-left: 10%;
+
+}
+
+.listSubmitBtn {
+    width: 50%;
+    margin-left: 25%;
+    background-color: #e53945;
+    color: #fffcf9;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
 }

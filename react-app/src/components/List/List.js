@@ -45,7 +45,7 @@ const Giftlists = () => {
                         <input
                         className='listsFormInput'
                         type='text'
-                        placeholder='List Name...'
+                        // placeholder='List Name...'
                         value={list_name}
                         onChange={updateGiftlists}
                         >
