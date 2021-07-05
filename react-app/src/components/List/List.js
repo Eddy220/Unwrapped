@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, useParams } from 'react-router-dom'
-import { obtainGiftlists, postGiftlist,  } from '../../store/giftlist'
+import { obtainGiftlists, postGiftlist, deleteGiftlist  } from '../../store/giftlist'
 import './List.css'
 
 const Giftlists = () => {
@@ -15,6 +15,12 @@ const Giftlists = () => {
 
     const updateGiftlists = (event) => {
         setGiftlist(event.target.value)
+    }
+
+    const delGiftlist = async (event, giftlist) => {
+        event.preventDefault()
+        let id = giftlist.id
+        await dispatch(deleteGiftlist({list_name, id}))
     }
 
     const onSubmit = async (event) => {
@@ -31,10 +37,10 @@ const Giftlists = () => {
     return (
         <>
         <div className='listPageContainer'>
-            <div className='listContainer'>
+            <div className='listContainer'> Lists:
                 <NavLink to='/' className='lists'>
                     {giftlists.map((giftlist) =>
-                        <div className='listnames'>{giftlist.list_name}</div>
+                        <div className='listnames'>{giftlist.list_name} <button className='deleteListBtn' onClick={(event)=> delGiftlist(event, giftlist)}>❌</button> </div>
                     )}
                 </NavLink>
             </div>

@@ -58,6 +58,26 @@ export const postGiftlist = (payload) => async (dispatch) => {
     dispatch(addGiftlist(data))
 }
 
+export const deleteGiftlist = (payload) => async (dispatch) => {
+    const { list_name, id } = payload
+    const res = await fetch(`/api/giftlists/deletelist/${id}`, {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            list_name,
+            id
+        })
+    });
+    const data = await res.json();
+    if (data.errors) {
+        return data;
+    }
+    dispatch(removeGiftlist(data))
+    return data
+}
+
 
 // Initial State
 const initialState = {giftlists: {}}
@@ -79,6 +99,11 @@ export default function reducer(state = initialState, action) {
                 newState.giftlists[giftlist.id] = giftlist
             })
             return newState
+        case REMOVE_GIFTLIST:
+            newState = {...state}
+            let giftlistsState = newState.giftlists
+            delete giftlistsState[action.payload.giftlist]
+            return newState;
         default:
             return state;
     }
