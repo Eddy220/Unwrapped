@@ -37,12 +37,15 @@ const Giftlists = () => {
     return (
         <>
         <div className='listPageContainer'>
-            <div className='listContainer'> Lists:
-                <NavLink to='/' className='lists'>
+            <div className='listContainer'> my lists:
+                {/* <NavLink to='/' className='lists'> */}
                     {giftlists.map((giftlist) =>
-                        <div className='listnames'>{giftlist.list_name} <button className='deleteListBtn' onClick={(event)=> delGiftlist(event, giftlist)}>❌</button> </div>
+                        <div className='listNameDelete'>
+                        <NavLink to='/' className='listnames'>{giftlist.list_name} </NavLink>
+                        <button className='deleteListBtn' onClick={(event)=> delGiftlist(event, giftlist)}>❌</button>
+                        </div>
                     )}
-                </NavLink>
+                {/* </NavLink> */}
             </div>
             <div className='listsFormContainer'>
                 <form className='listsForm' onSubmit={onSubmit}>

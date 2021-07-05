@@ -4,10 +4,6 @@
   }
 
 
-.lists {
-    text-decoration: none;
-    color: #457b9d;
-}
 
 .listnames {
     padding: 25px;
@@ -31,12 +27,15 @@
     background-color: #B1Ede8;
     font-family: "lemon milk";
     overflow-y: scroll;
-    height: 400px;
-    max-height: 400px;
+    height: 300px;
+    max-height: 300px;
     width: 600px;
     margin-right: 5%;
     margin-left: 10%;
+    padding-top: 5%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -52,6 +51,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-decoration: none;
+    color: #457b9d;
+    margin-top: 5%;
 }
 
 .listsForm {
@@ -108,18 +110,18 @@
     cursor: pointer;
     border: none;
     background: none;
-    width: 25%;
+    width: auto;
+    margin-top: 5%;
 }
 
 .deleteListBtn:hover {
     height: auto;
     cursor: pointer;
     border: none;
-    border: 2px solid black;
-    border-radius: 4px;
-    padding-top: 3px;
-    padding-right: 5px;
-    padding-bottom: 3px;
-    padding-left: 5px;
-    width: 25%;
+    width: auto;
+    font-size: x-large;
+}
+
+.listNameDelete {
+    display: flex;
 }
