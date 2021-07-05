@@ -39,27 +39,27 @@ const LoginForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
+      <div className='loginFormOuter'>
+        <label classnName='loginLabel' htmlFor='email'>Email: </label>
         <input
+          className='loginInput'
           name='email'
           type='text'
-          placeholder='Email'
           value={email}
           onChange={updateEmail}
         />
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
+      <div className='loginFormOuter'>
+        <label className='loginLabel' htmlFor='password'>Password: </label>
         <input
+          className='loginInput'
           name='password'
           type='password'
-          placeholder='Password'
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
       </div>
+      <button className='navBtns' type='submit'>Login</button>
     </form>
     </div>
   );

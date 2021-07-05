@@ -1,19 +1,44 @@
+@font-face{
+    font-family: "lemon milk";
+    src: url("../../LEMONMILK-Regular.otf") format("truetype");
+  }
+
 .loginFormContainer {
     display: flex;
     justify-content: center;
-    border: 1px solid #ededed;
     width: 50%;
     margin: auto;
     margin-top: 10%;
     height: auto;
-    border-radius: 5px;
-    background: #f7f7f7;
+    background: #B1Ede8;
     box-sizing:border-box;
     padding: 20px;
+    color: white;
+    font-family: "lemon milk";
 }
 
 .loginForm {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.loginInput {
+    /* font-family: "lemon milk"; */
+    display: flex;
+    border: none;
+    padding: 4px;
+    font-weight: 400;
+    display: block;
+    min-width: 0;
+    padding: 4px;
+    width: 100%;
+}
+
+.loginFormOuter {
+    margin: 5%;
 }
 
 .navBtns {
@@ -32,4 +57,5 @@
     align-items: center;
     height: 10px;
     font-family: "lemon milk";
+    cursor: pointer;
 }

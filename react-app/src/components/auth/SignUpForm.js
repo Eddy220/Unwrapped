@@ -71,45 +71,50 @@ const SignUpForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label>User Name</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>User Name</label>
         <input
+          className='signupInput'
           type='text'
           name='username'
           onChange={updateUsername}
           value={username}
         ></input>
       </div>
-      <div>
-        <label>Full Name</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>Full Name: </label>
         <input
+          className='signupInput'
           type='text'
           name='full_name'
           onChange={updateFullname}
           value={full_name}
         ></input>
       </div>
-      <div>
-        <label>Email</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>Email: </label>
         <input
+          className='signupInput'
           type='text'
           name='email'
           onChange={updateEmail}
           value={email}
         ></input>
       </div>
-      <div>
-        <label>Password</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>Password: </label>
         <input
+          className='signupInput'
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
         ></input>
       </div>
-      <div>
-        <label>Repeat Password</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>Repeat Password: </label>
         <input
+          className='signupInput'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
@@ -117,36 +122,39 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
-        <label>Birthday</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>Birthday: </label>
         <input
+          className='signupInput'
           type='date'
           name='birthday'
           onChange={updateBirthday}
           value={birthday}
         ></input>
       </div>
-      <div>
-        <label>Profile Image</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>Profile Image: </label>
         <input
+          className='loginInput'
           type='file'
           name='profile_image'
           onChange={updateProfileimage}
           value={profile_image}
         ></input>
       </div>
-      <div>
-        <label>About Me</label>
+      <div className='signupFormOuter'>
+        <label className='signupLabel'>About Me: </label>
         <textarea
+          className='loginInput'
           type='text'
           name='about_me'
           onChange={updateAboutme}
           value={about_me}
-          rows='4'
+          rows='3'
           cols='30'
         ></textarea>
       </div>
-      <button type='submit'>Sign Up</button>
+      <button className='navBtns'type='submit'>Sign Up </button>
     </form>
     </div>
   );
