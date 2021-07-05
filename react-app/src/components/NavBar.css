@@ -49,14 +49,6 @@
     margin-right: 5%;
 }
 
-.footer {
-    height: 60px;
-    position: absolute;
-    width: 100%;
-    left:0;
-    bottom: 0px;
-    background-color: #e53945;
-}
 
 .navLogo {
     color: #fffcf9;
@@ -122,4 +114,48 @@
 
 .navBtnsLogged:hover {
     background-color: black;
+}
+
+.footer {
+    height: 60px;
+    position: absolute;
+    width: 100%;
+    left:0;
+    bottom: 0px;
+    background-color: #e53945;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footerLinks {
+    display: flex;
+    align-items: center;
+}
+
+.footerLinks > a {
+    color: white;
+    margin-left: 50px;
+    /* margin-right: 20px; */
+    font-size: 30px;
+}
+
+.footerIcons:hover {
+    color: black;
+}
+
+.footerName {
+    font-size: 25px;
+    font-family: "lemon milk";
+}
+
+.eddykim {
+    text-decoration: none;
+    color: white;
+    margin-left: 50px;
+}
+
+.eddykim:hover {
+    color: black;
 }

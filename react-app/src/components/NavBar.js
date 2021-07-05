@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux';
 import './NavBar.css'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const NavBar = () => {
   const loggeduser = useSelector(state => state.session.user)
@@ -19,7 +20,19 @@ const NavBar = () => {
           <LogoutButton/>
         </div>
       </nav>
-        <div className='footer'></div>
+        <div className='footer'>
+          <div className='footerLinks'>
+              <div className='footerName'>
+              <a className='eddykim' href='https://github.com/Eddy220'>Eddy Kim</a></div>
+              <a href='https://github.com/Eddy220/Unwrapped'>
+                <FaGithub className='footerIcons'/>
+              </a>
+              <a href='https://www.linkedin.com/in/edward-kim-a97538215/'>
+                <FaLinkedin className='footerIcons'/>
+              </a>
+            </div>
+        </div>
+          {/* <img className='Unwrapped © 2021'></img> */}
       </div>
     )
   } else {
@@ -32,7 +45,19 @@ const NavBar = () => {
             <NavLink to='/sign-up' exact={true} className='navBtns'>S I G N U P</NavLink>
         </div>
       </nav>
-        <div className='footer'></div>
+      <div className='footer'>
+          <div className='footerLinks'>
+              <div className='footerName'>
+              <a className='eddykim' href='https://github.com/Eddy220'>Eddy Kim</a></div>
+              <a href='https://github.com/Eddy220/Unwrapped'>
+                <FaGithub className='footerIcons'/>
+              </a>
+              <a href='https://www.linkedin.com/in/edward-kim-a97538215/'>
+                <FaLinkedin className='footerIcons'/>
+              </a>
+            </div>
+        </div>
+          {/* <img className='Unwrapped © 2021'></img> */}
       </div>
     );
   }
