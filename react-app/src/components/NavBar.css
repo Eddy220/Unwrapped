@@ -36,10 +36,6 @@
     background-color: #e53945;
 }
 
-.body {
-    background-color: #fffcf9;
-}
-
 .navBtnContainer {
     display: flex;
     justify-content: flex-end;
@@ -158,4 +154,8 @@
 
 .eddykim:hover {
     color: black;
+}
+
+body {
+    /* background-image: url("../images/giftbg.png"); */
 }

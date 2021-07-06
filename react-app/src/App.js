@@ -10,6 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import SplashPage from './components/SplashPage/SplashPage';
 import Giftlists from './components/List/List';
+import Gifts from './components/IndividualGiftPage/IndividualGiftPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,6 +48,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/lists' exact={true}>
           <Giftlists/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/gifts/:id' exact={true}>
+          <Gifts/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
