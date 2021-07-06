@@ -37,7 +37,7 @@ const Giftlists = () => {
     return (
         <>
         <div className='listPageContainer'>
-            <div className='listContainer'> my lists:
+            <div className='listContainer'>
                 {/* <NavLink to='/' className='lists'> */}
                     {giftlists.map((giftlist) =>
                         <div className='listNameDelete'>
@@ -50,7 +50,7 @@ const Giftlists = () => {
             <div className='listsFormContainer'>
                 <form className='listsForm' onSubmit={onSubmit}>
                     <div className='listsFormContainer'>
-                        <label className='listsFormLabel'>START A NEW LIST</label>
+                        <label className='listsFormLabel'>START A NEW LIST ✏️</label>
                         <input
                         className='listsFormInput'
                         type='text'
