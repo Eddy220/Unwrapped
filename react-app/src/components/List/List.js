@@ -41,8 +41,8 @@ const Giftlists = () => {
                 {/* <NavLink to='/' className='lists'> */}
                     {giftlists.map((giftlist) =>
                         <div className='listNameDelete'>
-                        <NavLink to='/' className='listnames'>{giftlist.list_name} </NavLink>
-                        <button className='deleteListBtn' onClick={(event)=> delGiftlist(event, giftlist)}>❌</button>
+                            <NavLink to='/' className='listnames' >{giftlist.list_name} </NavLink>
+                            <button className='deleteListBtn' onClick={(event)=> delGiftlist(event, giftlist)}>❌</button>
                         </div>
                     )}
                 {/* </NavLink> */}
