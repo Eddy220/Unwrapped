@@ -9,7 +9,7 @@ const Giftlists = () => {
     const [list_name, setGiftlist] = useState('')
     const user = useSelector(state => state.session.user)
     let giftlists = useSelector(state => Object.values(state.giftlist.giftlists))
-    console.log(giftlists)
+    // console.log(giftlists)
     // const [change, setChange] = useState(false)
     let { id } = useParams()
 
@@ -54,7 +54,6 @@ const Giftlists = () => {
                         <input
                         className='listsFormInput'
                         type='text'
-                        // placeholder='List Name...'
                         value={list_name}
                         onChange={updateGiftlists}
                         >

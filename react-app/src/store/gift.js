@@ -39,14 +39,14 @@ export const obtainGifts = (id) => async (dispatch) => {
 }
 
 export const makeGift = (payload) => async (dispatch) => {
-    const { list_id, gift_name, gift_description, gift_link, id } = payload
+    const { id, gift_name, gift_description, gift_link } = payload
     const res = await fetch(`/api/gifts/${id}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            list_id,
+            id,
             gift_name,
             gift_description,
             gift_link
@@ -54,6 +54,7 @@ export const makeGift = (payload) => async (dispatch) => {
     })
 
     const data = await res.json();
+    console.log(data, 'this is data')
 
     if (data.errors) {
         return data
@@ -119,9 +120,11 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
         case GET_GIFTS:
             newState = {...state}
+            let updatedNewState = {}
             action.payload.gifts.forEach((gift) => {
-                newState.gifts[gift.id] = gift
+                updatedNewState[gift.id] = gift
             })
+            newState.gifts = updatedNewState
             return newState;
         case ADD_GIFT:
             newState = {...state}

@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import SplashPage from './components/SplashPage/SplashPage';
 import Giftlists from './components/List/List';
 import Gifts from './components/IndividualGiftPage/IndividualGiftPage';
+import GiftForm from './components/IndividualGiftPage/GiftForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -51,6 +52,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/gifts/:id' exact={true}>
           <Gifts/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/gifts/:id/giftform' exact={true}>
+          <GiftForm/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
