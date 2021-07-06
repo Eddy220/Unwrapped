@@ -65,36 +65,42 @@ export const makeGift = (payload) => async (dispatch) => {
 
 
 export const deleteGift = (payload) => async (dispatch) => {
-    const { list_id, gift_name, gift_description, gift_link, id } = payload
+    const { id, gift_name, gift_description, gift_link, purchased } = payload
+    console.log(payload)
     const res = await fetch(`/api/gifts/${id}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            list_id,
+            id,
             gift_name,
             gift_description,
-            gift_link
+            gift_link,
+            purchased
         })
     })
+    console.log(res)
 
     const data = await res.json();
+    console.log(data, "this is the data for delete")
     if (data.errors) {
         return data
     }
     dispatch(removeGift(data))
+    return data
 }
 
 export const updateGift = (payload) => async (dispatch) => {
-    const { list_id, gift_name, gift_description, gift_link, id } = payload
+    let { gift_id, gift_name, gift_description, gift_link } = payload
+    let id = gift_id
     const res = await fetch(`/api/gifts/${id}`, {
         method: 'PATCH',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            list_id,
+            id,
             gift_name,
             gift_description,
             gift_link
@@ -133,11 +139,11 @@ export default function reducer(state = initialState, action) {
         case REMOVE_GIFT:
             newState = {...state}
             let giftState = newState.gifts
-            delete giftState[action.payload.gifts]
+            delete giftState[action.payload.gift]
             return newState;
         case EDIT_GIFT:
             newState = {...state}
-            newState.gifts[action.payload.id] = action.payload
+            newState.gift = action.payload
             return newState;
         default:
             return state;

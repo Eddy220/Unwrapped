@@ -12,6 +12,7 @@ import SplashPage from './components/SplashPage/SplashPage';
 import Giftlists from './components/List/List';
 import Gifts from './components/IndividualGiftPage/IndividualGiftPage';
 import GiftForm from './components/IndividualGiftPage/GiftForm';
+import EditGiftForm from './components/IndividualGiftPage/EditGiftForm'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -55,6 +56,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/gifts/:id/giftform' exact={true}>
           <GiftForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/editgift/:id' exact={true}>
+          <EditGiftForm/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

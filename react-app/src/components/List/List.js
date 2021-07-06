@@ -19,6 +19,7 @@ const Giftlists = () => {
 
     const delGiftlist = async (event, giftlist) => {
         event.preventDefault()
+        // console.log(giftlist)
         let id = giftlist.id
         await dispatch(deleteGiftlist({list_name, id}))
     }
