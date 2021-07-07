@@ -52,7 +52,7 @@ function User() {
             <strong>About Me:</strong> {user.about_me}
           </div>
           { ( +userId === current_user.id) &&
-          <NavLink to='/editprofile'> Edit Profile </NavLink>
+          <NavLink to={`/editprofile/${current_user.id}`}> Edit Profile </NavLink>
           }
         </div>
       </div>

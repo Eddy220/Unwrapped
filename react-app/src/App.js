@@ -15,6 +15,7 @@ import GiftForm from './components/IndividualGiftPage/GiftForm';
 import EditGiftForm from './components/IndividualGiftPage/EditGiftForm';
 import { obtainGiftlists } from './store/giftlist';
 import HomePage from './components/HomePage/HomePage';
+import EditUser from './components/EditUser';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -53,6 +54,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
+        </ProtectedRoute>
+        <ProtectedRoute path='/editprofile/:userId' exact={true} >
+          <EditUser />
         </ProtectedRoute>
         <ProtectedRoute path='/lists' exact={true}>
           <Giftlists/>

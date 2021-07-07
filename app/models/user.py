@@ -41,3 +41,12 @@ class User(db.Model, UserMixin):
             'birthday': self.birthday,
             'about_me': self.about_me
         }
+
+    def to_dict_edit(self):
+        return {
+            'username': self.username,
+            'full_name': self.full_name,
+            'email': self.email,
+            'profile_image': self.profile_image,
+            'about_me': self.about_me
+        }
