@@ -12,6 +12,7 @@ const EditGiftForm = () => {
     const [gift_name, setNewGiftName] = useState(gift?.gift_name)
     const [gift_description, setNewGiftDescription] = useState(gift?.gift_description)
     const [gift_link, setNewGiftLink] = useState(gift?.gift_link)
+    // console.log(gift)
     const { id } = useParams()
 
     const updateNewGiftName = (event) => {
@@ -29,10 +30,11 @@ const EditGiftForm = () => {
     const onEdit = async (event) => {
         event.preventDefault();
         const gift_id = gift[id].id
-        console.log(gift)
+        const giftlist_id = gift[id].list_id
+        // console.log(gift_id)
         await dispatch(updateGift({gift_id, gift_name, gift_description, gift_link}))
 
-        history.push('/lists')
+        history.push(`/gifts/${giftlist_id}`)
     }
 
     useEffect(() => {

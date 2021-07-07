@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import giftlist from './giftlist'
 import gift from './gift'
+import user from './user'
 
 const rootReducer = combineReducers({
   session,
   giftlist,
-  gift
+  gift,
+  user
 });
 
 
