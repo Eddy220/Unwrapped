@@ -65,25 +65,17 @@ export const makeGift = (payload) => async (dispatch) => {
 
 
 export const deleteGift = (payload) => async (dispatch) => {
-    const { id, gift_name, gift_description, gift_link, purchased } = payload
-    console.log(payload)
-    const res = await fetch(`/api/gifts/${id}`, {
+    const { gift_id } = payload
+    const res = await fetch(`/api/gifts/${gift_id}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-            id,
-            gift_name,
-            gift_description,
-            gift_link,
-            purchased
-        })
     })
     console.log(res)
 
     const data = await res.json();
-    console.log(data, "this is the data for delete")
+
     if (data.errors) {
         return data
     }
@@ -139,7 +131,8 @@ export default function reducer(state = initialState, action) {
         case REMOVE_GIFT:
             newState = {...state}
             let giftState = newState.gifts
-            delete giftState[action.payload.gift]
+            console.log(action.payload)
+            delete giftState[action.payload.id]
             return newState;
         case EDIT_GIFT:
             newState = {...state}
