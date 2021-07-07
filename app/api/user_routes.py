@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import User, db
+from app.models import User, db, Friend
 from app.forms import EditUserForm
 
 user_routes = Blueprint('users', __name__)
@@ -54,3 +54,26 @@ def edit_user(id):
         db.session.commit()
         return user.to_dict_edit()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+
+@user_routes.route('/search/<int:id>')
+@login_required
+def search_user(id):
+    user = User.query.get(id)
+    # print(user.__dict__, 'this is user')
+    print(user.requester_rel)
+    print(user.accepter_rel)
+    return user.to_dict()
+
+
+@user_routes.route('/request/<int:id>')
+@login_required
+def request_id(id):
+    user_id = current_user.id
+    friend = Friend(requester=user_id, accepter=id)
+    db.session.add(friend)
+    db.session.commit()
+    user = User.query.get(user_id)
+    print(user.requester_rel.first().__dict__)
+    return

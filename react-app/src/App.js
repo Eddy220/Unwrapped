@@ -16,6 +16,8 @@ import EditGiftForm from './components/IndividualGiftPage/EditGiftForm';
 import { obtainGiftlists } from './store/giftlist';
 import HomePage from './components/HomePage/HomePage';
 import EditUser from './components/EditUser';
+import FriendsSearch from './components/Friends/FriendsSearch'
+import FriendRequest from './components/Friends/FriendRequest'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,6 +48,10 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/friends' exact={true} >
+          <FriendsSearch />
+          <FriendRequest />
+        </ProtectedRoute>
         <ProtectedRoute path='/home' exact={true} >
           <HomePage />
         </ProtectedRoute>
