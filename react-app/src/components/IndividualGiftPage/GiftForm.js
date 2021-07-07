@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -29,8 +29,12 @@ const GiftForm = () => {
     const onGiftSubmit = async (event) => {
         event.preventDefault()
         await dispatch(makeGift({id, gift_name, gift_description, gift_link}))
-        history.push(`/lists`)
+        history.push(`/gifts/${id}`)
     }
+
+    useEffect(() => {
+
+    }, [dispatch])
 
     return (
         <>
