@@ -9,7 +9,7 @@ const Gifts = () => {
     const dispatch = useDispatch()
     const current_user = useSelector((state) => state.session.user)
     const giftlist = useSelector((state => state.giftlist.giftlists[id]))
-    console.log(giftlist, 'this is the giftlists id')
+    // console.log(giftlist, 'this is the giftlists id')
     let gifts = useSelector(state => Object.values(state.gift.gifts))
     const [gift_name, setGiftName] = useState('')
     const [gift_description, setGiftDescription] = useState('')

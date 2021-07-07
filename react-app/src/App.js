@@ -12,8 +12,9 @@ import SplashPage from './components/SplashPage/SplashPage';
 import Giftlists from './components/List/List';
 import Gifts from './components/IndividualGiftPage/IndividualGiftPage';
 import GiftForm from './components/IndividualGiftPage/GiftForm';
-import EditGiftForm from './components/IndividualGiftPage/EditGiftForm'
-import { obtainGiftlists } from './store/giftlist'
+import EditGiftForm from './components/IndividualGiftPage/EditGiftForm';
+import { obtainGiftlists } from './store/giftlist';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -44,6 +45,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/home' exact={true} >
+          <HomePage />
+        </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>

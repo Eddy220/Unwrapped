@@ -6,14 +6,15 @@ import { updateGift } from "../../store/gift"
 import "./EditGiftForm.css"
 
 const EditGiftForm = () => {
+    const { id } = useParams()
     const dispatch = useDispatch()
     const history = useHistory()
     const gift = useSelector(state => state.gift.gifts)
-    const [gift_name, setNewGiftName] = useState(gift?.gift_name)
-    const [gift_description, setNewGiftDescription] = useState(gift?.gift_description)
-    const [gift_link, setNewGiftLink] = useState(gift?.gift_link)
+    // console.log(gift[id].gift_name)
+    const [gift_name, setNewGiftName] = useState(gift[id]?.gift_name)
+    const [gift_description, setNewGiftDescription] = useState(gift[id]?.gift_description)
+    const [gift_link, setNewGiftLink] = useState(gift[id]?.gift_link)
     // console.log(gift)
-    const { id } = useParams()
 
     const updateNewGiftName = (event) => {
         setNewGiftName(event.target.value)
