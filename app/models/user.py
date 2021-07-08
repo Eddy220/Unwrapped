@@ -50,3 +50,42 @@ class User(db.Model, UserMixin):
             'profile_image': self.profile_image,
             'about_me': self.about_me
         }
+
+    def to_dict_getfriends(self):
+
+        pendingfriendrequest = self.requester_rel.all()
+        friends = self.requester_rel.all()
+        incomingfriendrequests = self.accepter_rel.all()
+        outgoingfriendrequests = self.accepter_rel.all()
+
+        returned = {'pendingfriends':{}, 'incomingfriends':{}, 'outgoingfriends':{}}
+
+        for i in pendingfriendrequest:
+            returned['pendingfriends'][i.id]={
+                'requester_id': i.requester,
+                'accepter_id': i.accepter,
+                'status': i.status
+            }
+
+        for i in friends:
+            returned['incomingfriends'][i.id]={
+                'requester_id': i.requester,
+                'accepter_id': i.accepter,
+                'status': i.status
+            }
+
+        for i in incomingfriendrequests:
+            returned['incomingfriends'][i.id]={
+                'requester_id': i.requester,
+                'accepter_id': i.accepter,
+                'status': i.status
+            }
+
+        for i in outgoingfriendrequests:
+            returned['outgoingfriends'][i.id]={
+                'requester_id': i.requester,
+                'accepter_id': i.accepter,
+                'status': i.status
+            }
+
+        return returned

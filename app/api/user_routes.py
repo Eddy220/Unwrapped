@@ -77,3 +77,21 @@ def request_id(id):
     user = User.query.get(user_id)
     print(user.requester_rel.first().__dict__)
     return
+
+
+@user_routes.route('/getfriends')
+@login_required
+def get_friends():
+    user = User.query.get(current_user.id)
+    return user.to_dict_getfriends()
+
+
+
+
+@user_routes.route('/accepted/<int:id>', methods=['POST'])
+@login_required
+def accepted_friends(id):
+    accepted_user = Friend.query.filter(Friend.requester == id, Friend.accepter == current_user.id).first()
+    accepted_user.status = True
+    db.session.commit()
+    return accepted_user

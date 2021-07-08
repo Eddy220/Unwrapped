@@ -18,6 +18,8 @@ import HomePage from './components/HomePage/HomePage';
 import EditUser from './components/EditUser';
 import FriendsSearch from './components/Friends/FriendsSearch'
 import FriendRequest from './components/Friends/FriendRequest'
+import FriendsPending from './components/Friends/FriendsPending'
+import FriendsAccepted from './components/Friends/FriendsAccepted';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -51,6 +53,8 @@ function App() {
         <ProtectedRoute path='/friends' exact={true} >
           <FriendsSearch />
           <FriendRequest />
+          <FriendsPending />
+          <FriendsAccepted />
         </ProtectedRoute>
         <ProtectedRoute path='/home' exact={true} >
           <HomePage />
