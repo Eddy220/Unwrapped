@@ -14,7 +14,7 @@ const FriendsPending = () => {
     return (
         <>
             <div className='testcontainer'>
-                <button onClick={getFriendSubmit}>Submit</button>
+                <button onClick={getFriendSubmit}>Temporary get pending friend requests dispatch button</button>
             </div>
         </>
     )

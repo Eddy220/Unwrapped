@@ -26,7 +26,7 @@ const FriendRequest = () => {
             value={request}
             onChange={updateRequest}
             ></input>
-            <button onClick={onRequest}>Add</button>
+            <button onClick={onRequest}>Add Friend</button>
         </>
     )
 
