@@ -3,6 +3,7 @@ const GET_USER = "user/GET_USER"
 const ADD_USER = "user/ADD_USER"
 const GET_FRIENDS = "user/GET_FRIENDS"
 const ADD_ACCEPTED = "user/ADD_ACCEPTED"
+const GET_USERS = "user/GET_USERS"
 
 // Action Creators
 const getUser = (payload) => ({
@@ -25,7 +26,19 @@ const addAccepted = (payload) => ({
     payload
 })
 
+const getUsers = (users) => ({
+    type: GET_USERS,
+    users: users
+})
+
 // Thunks
+export const getAllUsers = () => async(dispatch) => {
+    const res = await fetch('/api/users/')
+    const data = await res.json()
+    dispatch(getUsers(data))
+    return data
+}
+
 export const obtainUser = (payload) => async (dispatch) => {
     const { id } = payload
     const res = await fetch(`/api/users/search/${id}`)
@@ -75,6 +88,13 @@ export default function reducer(state = initalState, action) {
         case GET_USER:
             newState = {...state}
             newState[action.payload.id] = action.payload
+            return newState
+        case GET_USERS:
+            newState = {}
+            // newState[action.payload.id] = action.payload
+            action.users.users.forEach((user) => {
+                newState[user.id] = user
+            })
             return newState
         case ADD_USER:
             newState = {...state}

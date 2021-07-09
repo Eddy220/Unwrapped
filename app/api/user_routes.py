@@ -76,7 +76,7 @@ def request_id(id):
     db.session.commit()
     user = User.query.get(user_id)
     print(user.requester_rel.first().__dict__)
-    return
+    return {}
 
 
 @user_routes.route('/getfriends')

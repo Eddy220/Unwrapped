@@ -56,9 +56,8 @@ class User(db.Model, UserMixin):
         pendingfriendrequest = self.requester_rel.all()
         friends = self.requester_rel.all()
         incomingfriendrequests = self.accepter_rel.all()
-        outgoingfriendrequests = self.accepter_rel.all()
 
-        returned = {'pendingfriends':{}, 'incomingfriends':{}, 'outgoingfriends':{}}
+        returned = {'pendingfriends':{}, 'incomingfriends':{} }
 
         for i in pendingfriendrequest:
             returned['pendingfriends'][i.id]={
@@ -76,13 +75,6 @@ class User(db.Model, UserMixin):
 
         for i in incomingfriendrequests:
             returned['incomingfriends'][i.id]={
-                'requester_id': i.requester,
-                'accepter_id': i.accepter,
-                'status': i.status
-            }
-
-        for i in outgoingfriendrequests:
-            returned['outgoingfriends'][i.id]={
                 'requester_id': i.requester,
                 'accepter_id': i.accepter,
                 'status': i.status

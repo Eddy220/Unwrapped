@@ -1,32 +1,62 @@
-import React, { useState }from "react"
-import { obtainUser } from "../../store/user"
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState }from "react"
+import { obtainUser, getAllUsers, obtainFriends, addFriend } from "../../store/user"
+import { useDispatch, useSelector } from 'react-redux'
+import FriendsAccepted from './FriendsAccepted'
+// import FriendRequest from './FriendRequest'
 import "./FriendsSearch.css"
+import { Link } from "react-router-dom"
 
 const FriendsSearch = () => {
     const dispatch = useDispatch()
-    const [userId, setUserId] = useState()
+    const users = useSelector(state => (state.user))
+    const [username, setUsername] = useState('')
+    const [searchedUserid, setSearchedUserid] = useState(null)
+    const [request, setRequest] = useState()
+    const usersArray = Object.values(users)
 
-    const searchUser = async (e) => {
+    // console.log(usersArray)
+    // console.log(Object.values(usersArray))
+
+    useEffect(() => {
+        dispatch(getAllUsers())
+        dispatch(obtainFriends())
+    },[dispatch])
+
+    let searchedUser;
+
+    const searchButton = async (e) => {
         e.preventDefault();
-        const id = userId
-
-        const data = await dispatch(obtainUser({id}))
+        // const name = e.target
+        // console.log(username)
+        searchedUser = usersArray.filter(user => {
+            if (user.username === username) {
+                return user
+            }
+        })
+        setSearchedUserid(searchedUser[0].id)
     }
 
-    const searchInput = (e) => {
-        setUserId(e.target.value)
+    const requestButton = async (e) => {
+        e.preventDefault();
+        let id = searchedUserid
+        const data = await dispatch(addFriend({id}))
     }
+
+    console.log(searchedUser)
+    console.log(searchedUserid)
 
     return (
         <>
         <div className='SearchContainer'>
             <input
-            value={userId}
-            onChange={searchInput}
+            value={username}
+            onChange={e=> {setUsername(e.target.value)}}
             ></input>
-            <button onClick={searchUser}>Search</button>
+            <button onClick={searchButton}>Search</button>
+            {searchedUserid && <Link to={`/users/${searchedUserid}`}>Go to {username}</Link>}
+            {searchedUserid && <button onClick={requestButton}>Request Friend</button>}
         </div>
+        <FriendsAccepted />
         </>
     )
 }
