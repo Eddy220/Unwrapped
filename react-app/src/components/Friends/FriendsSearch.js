@@ -17,17 +17,16 @@ const FriendsSearch = () => {
     // console.log(usersArray)
     // console.log(Object.values(usersArray))
 
-    useEffect(() => {
-        dispatch(getAllUsers())
-        dispatch(obtainFriends())
-    },[dispatch])
+    // useEffect(() => {
+    //     dispatch(getAllUsers())
+    //     dispatch(obtainFriends())
+    // },[dispatch])
 
     let searchedUser;
 
     const searchButton = async (e) => {
         e.preventDefault();
-        // const name = e.target
-        // console.log(username)
+
         searchedUser = usersArray.filter(user => {
             if (user.username === username) {
                 return user
@@ -42,8 +41,8 @@ const FriendsSearch = () => {
         const data = await dispatch(addFriend({id}))
     }
 
-    console.log(searchedUser)
-    console.log(searchedUserid)
+    // console.log(searchedUser)
+    // console.log(searchedUserid)
 
     return (
         <>
