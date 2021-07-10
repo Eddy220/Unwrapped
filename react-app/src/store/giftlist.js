@@ -1,4 +1,5 @@
 // Constants
+import { REMOVE_USER } from './session'
 const ADD_GIFTLIST = "giftlist/ADD_GIFTLIST"
 const GET_GIFTLISTS = "giftlist/GET_GIFTLISTS"
 const EDIT_GIFTLIST = "giftlist/EDIT_GIFTLIST"
@@ -104,6 +105,10 @@ export default function reducer(state = initialState, action) {
             let giftlistsState = newState.giftlists
             delete giftlistsState[action.payload.giftlist]
             return newState;
+        case REMOVE_USER:
+            newState = {...state}
+            newState.giftlists = {}
+            return newState
         default:
             return state;
     }

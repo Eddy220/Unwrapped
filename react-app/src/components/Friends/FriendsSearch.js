@@ -39,6 +39,7 @@ const FriendsSearch = () => {
         e.preventDefault();
         let id = searchedUserid
         const data = await dispatch(addFriend({id}))
+        alert("Your request has been successfully sent!")
     }
 
     // console.log(searchedUser)
