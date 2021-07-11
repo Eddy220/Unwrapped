@@ -10,7 +10,7 @@ const Gifts = () => {
     const dispatch = useDispatch()
     // const current_user = useSelector((state) => state.session.user)
     const giftlist = useSelector((state => state.giftlist.giftlists))
-    // console.log(giftlist, 'this is the giftlists id')
+    console.log(giftlist, 'this is the giftlists id')
     let gifts = useSelector(state => Object.values(state.gift.gifts))
     const [gift_name, setGiftName] = useState('')
     const [gift_description, setGiftDescription] = useState('')
@@ -38,21 +38,33 @@ const Gifts = () => {
         <>
             <div className='giftPageContainer'>
                 <div className='giftContainer'>
+                    <div className='giftContainerName'>{giftlist[id]?.list_name}</div>
+                    <div className='giftContainerLabelsContainer'>
+                        <div className='giftContainerLabels'>Gift  </div>
+                        <div className='giftContainerLabels'>Description  </div>
+                        <div className='giftContainerLabels'>Link  </div>
+                    </div>
                     {gifts.map((gift) =>
-                        <div>
-                            <div> {gift.gift_name} {gift.gift_description} {gift.gift_link} </div>
+                        <div className='singleGift'>
+                            <div className='singleGiftLabels'>{gift.gift_name}</div>
+                            <div className='singleGiftLabels'>{gift.gift_description}</div>
+                            <a className='singleGiftLabelsLink' href={`https://${gift.gift_link}`}> {gift.gift_link} </a>
+                            {/* <label className='singleGiftLabels' for='purchased'>Purchased</label>
+                            <input className='singleGiftLabels' id='purchased' type='checkbox' name='purchased'></input> */}
                             {giftlist[id]?.id === gift.list_id &&
                             <>
                             { ifcurrentuserownslist.current = true }
-                            <button onClick={(event) => delGift(event, gift)}> X </button>
-                            <NavLink to={`/editgift/${gift.id}`}>Edit Gift</NavLink>
+                            <button className='singleGiftDeleteButton' onClick={(event) => delGift(event, gift)}> X </button>
+                            <NavLink className='editGiftButton' to={`/editgift/${gift.id}`}>Edit Gift</NavLink>
                             </>
                             }
                         </div>
                     )}
                 </div>
+            </div>
+            <div className='addSingleGiftContainer'>
                 { ifcurrentuserownslist.current &&
-                <NavLink className='addGiftLink' to={`/gifts/${id}/giftform`}> ADD </NavLink>
+                <NavLink className='addGiftButton' to={`/gifts/${id}/giftform`}> A D D </NavLink>
                 }
             </div>
         </>

@@ -1,3 +1,165 @@
+@font-face{
+    font-family: "lemon milk";
+    src: url("../../LEMONMILK-Regular.otf") format("truetype");
+  }
+
 .giftContainer {
-    margin: 15%;
+    /* margin: 20%; */
+    padding: 100px;
+    background: #B1EdE8;
+    height: 150px;
+    overflow-y:scroll;
+}
+
+.giftPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 175px;
+}
+
+.singleGift {
+    display: flex;
+    justify-content:space-between;
+}
+
+.singleGiftLabels {
+    display:flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: #352D39;
+    width: 150px;
+}
+
+.editGiftButton {
+    display:flex;
+    margin: 20px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: white;
+    background: #FF6978;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 25px;
+    height: 50%;
+}
+
+
+.editGiftButton:hover {
+    display:flex;
+    margin: 20px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: white;
+    background-color: #e53945;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 25px;
+}
+
+.singleGiftLabelsLink {
+    display:flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: #457b9d;
+}
+
+.singleGiftLabelsLink:hover {
+    display:flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: #e53945;
+}
+
+.singleGiftDeleteButton {
+    height: 50%;
+    margin: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: "lemon milk"
+}
+
+.singleGiftDeleteButton:hover {
+    height: 50%;
+    margin: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: red;
+    font-weight:bolder;
+    font-family: "lemon milk"
+}
+
+.addSingleGiftContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    font-family: "lemon milk"
+}
+
+.addGiftButton {
+    text-decoration: none;
+    color: white;
+    background: #FF6978;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 25px;
+}
+
+.addGiftButton:hover {
+    text-decoration: none;
+    background: #e53945;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 25px;
+}
+
+.giftContainerLabelsContainer {
+    display: flex;
+}
+
+.giftContainerLabels {
+    display:flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: #e53945;
+    width: 150px;
+    text-decoration: underline;
+}
+
+.giftContainerName {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    margin-bottom: 25px;
+    font-family: "lemon milk";
+    font-size: x-large;
+    color: #352D39;
 }
