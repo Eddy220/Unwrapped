@@ -26,12 +26,13 @@ const UpcomingDates = () => {
     }}, [users, friends])
 
 
+
     return isLoaded && (
         <>
-            <div> Upcoming Dates:
+            <div> Friend Birthdays:
                 {friends.map((id) => {
                     return (
-                        <div key={id}>{users[id].birthday}</div>
+                        <div key={id}>{users[id].full_name}: {users[id].birthday.toString().slice(4,16)}</div>
                     )
                 })}
             </div>

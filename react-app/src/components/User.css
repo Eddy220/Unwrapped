@@ -31,6 +31,7 @@
 .profileContainer {
     background: #B1EDe8;
     padding: 30px;
+    height: 175px;
 }
 
 .profileLabelContainer {
@@ -69,4 +70,36 @@
     background: #e53945;
     color: white;
     padding: 10px;
+}
+
+.profileListContainer {
+    overflow-y: scroll;
+    background: #FF6978;
+    margin-top: 25px;
+    width: auto;
+    height: 200px;
+    /* max-height:200px; */
+}
+
+.profileLists {
+    margin: 50px;
+}
+
+.profileListNames {
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: white;
+}
+
+.profileListNames:hover {
+    font-family: "lemon milk";
+    text-decoration: none;
+    color: black;
+}
+
+.profileListContainerLabel {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: -15px;
+    font-family: "lemon milk";
 }

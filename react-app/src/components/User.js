@@ -68,10 +68,11 @@ function User() {
           </div>
           }
         </div>
-        <div>
+        <div className='profileListContainer'>
+        <div className='profileListContainerLabel'>Gift Lists:</div>
         {user.giftlists_rel.map((giftlist) =>
-                        <div className='listNameDelete'>
-                            <NavLink to={`/gifts/${giftlist.id}`} className='listnames' >{giftlist.list_name} </NavLink>
+                        <div className='profileLists'>
+                            <NavLink to={`/gifts/${giftlist.id}`} className='profileListNames' >{giftlist.list_name} </NavLink>
                         </div>
                     )}
         </div>
