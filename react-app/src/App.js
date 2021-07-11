@@ -17,8 +17,6 @@ import { obtainGiftlists } from './store/giftlist';
 import HomePage from './components/HomePage/HomePage';
 import EditUser from './components/EditUser';
 import FriendsSearch from './components/Friends/FriendsSearch'
-// import FriendRequest from './components/Friends/FriendRequest'
-import FriendsPending from './components/Friends/FriendsPending'
 import FriendsAccepted from './components/Friends/FriendsAccepted';
 
 function App() {

@@ -42,6 +42,10 @@ const FriendsSearch = () => {
         alert("Your request has been successfullysent!")
     }
 
+    useEffect(() => {
+        dispatch(obtainFriends())
+    }, [dispatch])
+
     // console.log(searchedUser)
     // console.log(searchedUserid)
 
