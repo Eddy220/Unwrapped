@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { obtainGiftlists } from '../store/giftlist';
 import './User.css'
 import Giftlists from './List/List';
 
 function User() {
+  const dispatch = useDispatch()
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   const current_user = useSelector((state) => state.session.user)
+  let giftlists = useSelector(state => Object.values(state.giftlist.giftlists))
+  // console.log(giftlists)
 
   useEffect(() => {
     if (!userId) {
@@ -17,6 +21,7 @@ function User() {
       const response = await fetch(`/api/users/${userId}`);
       const user = await response.json();
       setUser(user);
+      dispatch(obtainGiftlists(userId))
     })();
   }, [userId]);
 
@@ -57,6 +62,13 @@ function User() {
             <NavLink className='editProfileBtn'to={`/editprofile/${current_user.id}`}> Edit Profile </NavLink>
           </div>
           }
+        </div>
+        <div>
+        {giftlists.map((giftlist) =>
+                        <div className='listNameDelete'>
+                            <NavLink to={`/gifts/${giftlist.id}`} className='listnames' >{giftlist.list_name} </NavLink>
+                        </div>
+                    )}
         </div>
       </div>
     );
