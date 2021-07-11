@@ -10,10 +10,14 @@ const UpcomingDates = () => {
         if (state.user.friends.incomingfriends) {
         let friendsArray = []
         Object.keys(state.user.friends.incomingfriends).map((key) => {
+            let accepter = state.user.friends.incomingfriends[key].accepter_id
             let status = state.user.friends.incomingfriends[key].status
             let friend = state.user.friends.incomingfriends[key].requester_id
-            if (status == true) {
+            if (status == true && friend != user.id) {
                 friendsArray.push(friend)
+            }
+            if (status == true && accepter != user.id) {
+                friendsArray.push(accepter)
             }
         })
         return friendsArray
