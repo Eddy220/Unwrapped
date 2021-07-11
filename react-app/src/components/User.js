@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './User.css'
+import Giftlists from './List/List';
 
 function User() {
   const [user, setUser] = useState({});
@@ -32,27 +33,29 @@ function User() {
     return (
 
       <div className='profile'>
+        <div className='profilePicContainer'>
+          <img className='profilepic' src={user.profile_image}></img>
+        </div>
         <div className='profileContainer'>
-          <div>
-            <img src={user.profile_image}></img>
+          <div className='profileLabelContainer'>
+            <strong className='profileLabels'>Username:</strong> {user.username}
           </div>
-          <div>
-            <strong>Username:</strong> {user.username}
+          <div className='profileLabelContainer'>
+            <strong className='profileLabels'>Full name:</strong> {user.full_name}
           </div>
-          <div>
-            <strong>Full name:</strong> {user.full_name}
+          <div className='profileLabelContainer'>
+            <strong className='profileLabels'>Email:</strong> {user.email}
           </div>
-          <div>
-            <strong>Email:</strong> {user.email}
+          <div className='profileLabelContainer'>
+            <strong className='profileLabels'>Birthday:</strong> {newmonth + 1}-{newday + 1}-{newyear}
           </div>
-          <div>
-            <strong>Birthday:</strong> {newmonth + 1}-{newday + 1}-{newyear}
-          </div>
-          <div>
-            <strong>About Me:</strong> {user.about_me}
+          <div className='profileLabelContainer'>
+            <strong className='profileLabels'>About Me:</strong> {user.about_me}
           </div>
           { ( +userId === current_user.id) &&
-          <NavLink to={`/editprofile/${current_user.id}`}> Edit Profile </NavLink>
+          <div className='editProfileBtnContainer'>
+            <NavLink className='editProfileBtn'to={`/editprofile/${current_user.id}`}> Edit Profile </NavLink>
+          </div>
           }
         </div>
       </div>

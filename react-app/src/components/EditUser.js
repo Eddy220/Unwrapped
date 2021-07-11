@@ -14,7 +14,7 @@ const EditUser = () => {
     const [username, setUsername] = useState(user?.username)
     const [full_name, setFullname] = useState(user?.full_name)
     const [email, setEmail] = useState(user?.email)
-    const [profile_image, setProfileImage] = useState('')
+    const [profile_image, setProfileImage] = useState(user?.profile_image)
     const [about_me, setAboutme] = useState(user?.about_me)
 
     const updateUsername = (event) => {
@@ -85,7 +85,7 @@ const EditUser = () => {
                     <input
                     name="profile_image"
                     value={profile_image}
-                    type="file"
+                    type="text"
                     onChange={updateProfileImage}
                     ></input>
                 </div>

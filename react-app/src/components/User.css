@@ -1,3 +1,71 @@
+@font-face{
+    font-family: "lemon milk";
+    src: url("../LEMONMILK-Regular.otf") format("truetype");
+  }
+
 .profile {
-    margin: 15%;
+    margin-top: 150px;
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profilePicContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -100px;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+}
+
+.profilepic {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid #FF6978;
+    display: flex;
+}
+
+.profileContainer {
+    background: #B1EDe8;
+    padding: 30px;
+}
+
+.profileLabelContainer {
+    font-family: "lemon milk";
+}
+
+.profileLabels {
+    font-family: "lemon milk";
+    color: #e53945;
+}
+
+.editProfileBtnContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.editProfileBtn {
+    margin-top: 25px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background: #FF6978;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.editProfileBtn:hover {
+    margin-top: 25px;
+    font-family: "lemon milk";
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background: #e53945;
+    color: white;
+    padding: 10px;
 }

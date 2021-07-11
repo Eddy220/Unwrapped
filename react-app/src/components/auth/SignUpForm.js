@@ -133,10 +133,10 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div className='signupFormOuter'>
-        <label className='signupLabel'>Profile Image: </label>
+        <label className='signupLabel'>Profile Img Link: </label>
         <input
           className='loginInput'
-          type='file'
+          type='text'
           name='profile_image'
           onChange={updateProfileimage}
           value={profile_image}
