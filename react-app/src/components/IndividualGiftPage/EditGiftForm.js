@@ -74,7 +74,7 @@ const EditGiftForm = () => {
                     ></input>
                 </div>
                 <div className='GiftBtnContainer'>
-                    <button className='GiftBtn' type='submit' >Add</button>
+                    <button className='GiftBtn' type='submit' >EDIT</button>
                 </div>
             </form>
         </div>

@@ -51,55 +51,64 @@ const EditUser = () => {
 
     return (
         <>
-        <div className='EditProfileContainer'></div>
-            <form className='EditProfileForm' onSubmit={onEdit}>
-                <div>
-                    <label> Username </label>
-                    <input
-                    name="username"
-                    value={username}
-                    type="text"
-                    onChange={updateUsername}
-                    ></input>
-                </div>
-                <div>
-                    <label> Full name </label>
-                    <input
-                    name="full_name"
-                    value={full_name}
-                    type="text"
-                    onChange={updateFullname}
-                    ></input>
-                </div>
-                <div>
-                    <label> Email </label>
-                    <input
-                    name="email"
-                    value={email}
-                    type="text"
-                    onChange={updateEmail}
-                    ></input>
-                </div>
-                <div>
-                    <label> Profile Image </label>
-                    <input
-                    name="profile_image"
-                    value={profile_image}
-                    type="text"
-                    onChange={updateProfileImage}
-                    ></input>
-                </div>
-                <div>
-                    <label> Bio </label>
-                    <input
-                    name="about_me"
-                    value={about_me}
-                    type="text"
-                    onChange={updateAboutme}
-                    ></input>
-                </div>
-                <button type='submit'>Edit</button>
-            </form>
+            <div className='editProfileContainer'>
+                <form className='editProfileForm' onSubmit={onEdit}>
+                    <div>
+                        <label className='editUserLabels'> Username: </label>
+                        <input
+                        className='editUserInput'
+                        name="username"
+                        value={username}
+                        type="text"
+                        onChange={updateUsername}
+                        ></input>
+                    </div>
+                    <div>
+                        <label className='editUserLabels'> Full name: </label>
+                        <input
+                        className='editUserInput'
+                        name="full_name"
+                        value={full_name}
+                        type="text"
+                        onChange={updateFullname}
+                        ></input>
+                    </div>
+                    <div>
+                        <label className='editUserLabels'> Email: </label>
+                        <input
+                        className='editUserInput'
+                        name="email"
+                        value={email}
+                        type="text"
+                        onChange={updateEmail}
+                        ></input>
+                    </div>
+                    <div>
+                        <label className='editUserLabels'> Profile Image Link: </label>
+                        <input
+                        className='editUserInput'
+                        name="profile_image"
+                        value={profile_image}
+                        type="text"
+                        onChange={updateProfileImage}
+                        ></input>
+                    </div>
+                    <div>
+                        <label className='editUserLabels'> Bio: </label>
+                        <textarea
+                        className='editUserInput'
+                        name="about_me"
+                        value={about_me}
+                        type="text"
+                        onChange={updateAboutme}
+                        rows='5'
+                        ></textarea>
+                    </div>
+                    <div className='editUserBtnContainer'>
+                        <button className='editUserBtn'type='submit'>Edit</button>
+                    </div>
+                </form>
+            </div>
         </>
     )
 }

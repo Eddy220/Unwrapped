@@ -143,7 +143,7 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div className='signupFormOuter'>
-        <label className='signupLabel'>About Me: </label>
+        <label className='signupLabel'>Bio: </label>
         <textarea
           className='loginInput'
           type='text'

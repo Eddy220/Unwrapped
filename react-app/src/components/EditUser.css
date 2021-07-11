@@ -1,3 +1,59 @@
-.EditProfileContainer {
-    margin: 15%;
+
+.editProfileContainer {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 150px;
+    height: auto;
+    background: #B1Ede8;
+    box-sizing:border-box;
+    padding: 25px;
+    color: #352D39;
+    font-family: "lemon milk";
+}
+
+.editUserLabels {
+    display: flex;
+    margin-top: 5%;
+}
+
+.editUserBtnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.editUserBtn {
+    text-decoration: none;
+    background-color: #457b9d;
+    color: #fffcf9;
+    border-radius: 25px;
+    border:none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    display: flex;
+    align-items: center;
+    height: 10px;
+    font-family: "lemon milk";
+    cursor: pointer;
+}
+
+.editUserBtn:hover {
+    text-decoration: none;
+    background-color: black;
+    color: #fffcf9;
+    border-radius: 25px;
+    border:none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    display: flex;
+    align-items: center;
+    height: 10px;
+    font-family: "lemon milk";
+    cursor: pointer;
 }
