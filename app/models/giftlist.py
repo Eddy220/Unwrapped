@@ -8,7 +8,7 @@ class Giftlist(db.Model):
     user_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
     list_name = db.Column(db.String(50), nullable=False)
 
-    giftlist_user_id_rel = db.relationship('Gift', backref='giftlist_userId', lazy='dynamic', foreign_keys='Gift.list_id')
+    giftlist_user_id_rel = db.relationship('User', back_populates='giftlists_rel')
 
     def to_dict(self):
         return {

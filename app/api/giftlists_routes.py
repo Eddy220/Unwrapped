@@ -21,6 +21,23 @@ def get_lists():
     giftlists = Giftlist.query.filter(Giftlist.user_id == user).all()
     return {"giftlists":[giftlist.to_dict() for giftlist in giftlists] }
 
+# @giftlists_routes.route('/all/user')
+# def get_lists():
+#     print()
+#     giftlists = User.query.filter(User. == user).all()
+#     return {"giftlists":[giftlist.to_dict() for giftlist in giftlists] }
+
+# @giftlists_routes.route('/all/user')
+# def get_lists():
+#     giftlists = Giftlist.query.all()
+#     return {"giftlists":[giftlist.to_dict() for giftlist in giftlists] }
+
+# @giftlists_routes.route('/all/user/<int:id>')
+# @login_required
+# def get_all_lists(id):
+#     giftlists = Giftlist.query.filter(Giftlist.user_id == id).all()
+#     return {"giftlists":[giftlist.to_dict() for giftlist in giftlists] }
+
 @giftlists_routes.route('/one/user/<int:id>')
 def get_one(id):
     giftlist = Giftlist.query.filter_by(id=id).first()

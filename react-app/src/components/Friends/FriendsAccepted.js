@@ -7,7 +7,7 @@ import { Link, useHistory } from "react-router-dom"
 const FriendsAccepted = () => {
     const dispatch = useDispatch()
     const history = useHistory()
-    // const friendrequests = useSelector(state => (state.user.friends.incomingfriends))
+    const friendrequests = useSelector(state => (state.user.friends.incomingfriends))
     const user = useSelector(state => state.session.user)
     const users = useSelector(state => state.user)
     const requester_user = useSelector(state => {

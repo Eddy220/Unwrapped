@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     birthday = db.Column(db.Date, nullable=False)
     about_me = db.Column(db.String(500), nullable=False)
 
-    user_id_rel = db.relationship('Giftlist', backref='userId', lazy='dynamic', foreign_keys='Giftlist.user_id')
+    giftlists_rel = db.relationship('Giftlist', back_populates='giftlist_user_id_rel', lazy='dynamic')
 
     requester_rel = db.relationship('Friend', backref='requesterId', lazy='dynamic', foreign_keys='Friend.requester')
     accepter_rel = db.relationship('Friend', backref='accepterId', lazy='dynamic', foreign_keys='Friend.accepter')
@@ -39,7 +39,8 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profile_image': self.profile_image,
             'birthday': self.birthday,
-            'about_me': self.about_me
+            'about_me': self.about_me,
+            'giftlists_rel': [giftlist.to_dict() for giftlist in self.giftlists_rel]
         }
 
     def to_dict_edit(self):

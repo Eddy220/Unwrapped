@@ -7,10 +7,13 @@ import Giftlists from './List/List';
 
 function User() {
   const dispatch = useDispatch()
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false)
+  // console.log(user.giftlists_rel, 'this is users')
   const { userId }  = useParams();
   const current_user = useSelector((state) => state.session.user)
   let giftlists = useSelector(state => Object.values(state.giftlist.giftlists))
+
   // console.log(giftlists)
 
   useEffect(() => {
@@ -25,6 +28,11 @@ function User() {
     })();
   }, [userId]);
 
+  useEffect(() => {
+    if (user) {
+      setIsLoaded(true)
+  }}, [user])
+
   // console.log(userId, 'this is userId')
   // console.log(current_user.id, 'this is sessions user id')
 
@@ -35,8 +43,7 @@ function User() {
     let newyear = newbirthday.getFullYear()
     // let birthday = newdate.toString().slice(0,16)
 
-    return (
-
+    return isLoaded && (
       <div className='profile'>
         <div className='profilePicContainer'>
           <img className='profilepic' src={user.profile_image}></img>
@@ -64,7 +71,7 @@ function User() {
           }
         </div>
         <div>
-        {giftlists.map((giftlist) =>
+        {user.giftlists_rel.map((giftlist) =>
                         <div className='listNameDelete'>
                             <NavLink to={`/gifts/${giftlist.id}`} className='listnames' >{giftlist.list_name} </NavLink>
                         </div>
