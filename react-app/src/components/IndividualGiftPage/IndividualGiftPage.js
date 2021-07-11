@@ -43,14 +43,14 @@ const Gifts = () => {
                         <div className='giftContainerLabels'>Gift </div>
                         <div className='giftContainerLabels'>Description </div>
                         <div className='giftContainerLabels'>Link </div>
+                        {/* <div className='giftContainerLabels'>Purchased</div> */}
                     </div>
                     {gifts.map((gift) =>
                         <div className='singleGift'>
                             <div className='singleGiftLabels'>{gift.gift_name}</div>
                             <div className='singleGiftLabels'>{gift.gift_description}</div>
                             <a className='singleGiftLabelsLink' href={`https://${gift.gift_link}`}> {gift.gift_link} </a>
-                            {/* <label className='singleGiftLabels' for='purchased'>Purchased</label>
-                            <input className='singleGiftLabels' id='purchased' type='checkbox' name='purchased'></input> */}
+                            {/* <input className='giftContainerLabels' id='purchased' type='checkbox' name='purchased'></input> */}
                             {giftlist[id]?.id === gift.list_id &&
                             <>
                             { ifcurrentuserownslist.current = true }
