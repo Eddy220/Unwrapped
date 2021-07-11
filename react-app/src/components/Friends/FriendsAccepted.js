@@ -2,10 +2,11 @@ import React, {useEffect} from 'react';
 import { getAllUsers, makeFriend, obtainFriends } from '../../store/user';
 import { useDispatch, useSelector } from 'react-redux';
 import './FriendsAccepted.css'
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 const FriendsAccepted = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
     // const friendrequests = useSelector(state => (state.user.friends.incomingfriends))
     const user = useSelector(state => state.session.user)
     const users = useSelector(state => state.user)
@@ -52,6 +53,8 @@ const FriendsAccepted = () => {
         const id = e.target.value
         console.log(id)
         const data = await dispatch(makeFriend(id))
+        history.push('/home')
+        history.go(0)
     }
 
     return (
