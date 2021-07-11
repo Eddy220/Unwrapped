@@ -47,7 +47,7 @@ const EditGiftForm = () => {
         <div className='EditGiftFormContainer'>
             <form className='EditGiftForm' onSubmit={onEdit}>
                 <div>
-                    <label> Gift Name </label>
+                    <label className='giftLabel'> Gift Name </label>
                     <input
                     name="gift_name"
                     value={gift_name}
@@ -56,7 +56,7 @@ const EditGiftForm = () => {
                     ></input>
                 </div>
                 <div>
-                    <label> Gift Description </label>
+                    <label className='giftLabel'> Gift Description </label>
                     <input
                     name="gift_description"
                     value={gift_description}
@@ -65,7 +65,7 @@ const EditGiftForm = () => {
                     ></input>
                 </div>
                 <div>
-                    <label> Gift Link </label>
+                    <label className='giftLabel'> Gift Link </label>
                     <input
                     name="gift_link"
                     value={gift_link}
@@ -73,7 +73,9 @@ const EditGiftForm = () => {
                     onChange={updateNewGiftLink}
                     ></input>
                 </div>
-                <button type="submit"> Edit </button>
+                <div className='GiftBtnContainer'>
+                    <button className='GiftBtn' type='submit' >Add</button>
+                </div>
             </form>
         </div>
         </>

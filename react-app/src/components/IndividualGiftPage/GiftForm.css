@@ -1,7 +1,58 @@
 .giftOuter {
-    margin: 15%
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 200px;
+    height: auto;
+    background: #B1Ede8;
+    box-sizing:border-box;
+    padding: 50px;
+    color: #352D39;
+    font-family: "lemon milk";
 }
 
-.addGiftContainer {
-    margin: 15%;
+.giftLabel {
+    display: flex;
+    margin-top: 5%;
+}
+
+.GiftBtn {
+    text-decoration: none;
+    background-color: #457b9d;
+    color: #fffcf9;
+    border-radius: 25px;
+    border:none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    display: flex;
+    align-items: center;
+    height: 10px;
+    font-family: "lemon milk";
+    cursor: pointer;
+}
+
+.GiftBtn:hover {
+    text-decoration: none;
+    background-color: black;
+    color: #fffcf9;
+    border-radius: 25px;
+    border:none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    display: flex;
+    align-items: center;
+    height: 10px;
+    font-family: "lemon milk";
+    cursor: pointer;
+}
+
+.GiftBtnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
 }

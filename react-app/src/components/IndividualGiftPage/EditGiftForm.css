@@ -1,7 +1,13 @@
 .EditGiftFormContainer {
-    margin: 15%;
-}
-
-.EditGiftForm {
-    margin: 15%;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 200px;
+    height: auto;
+    background: #B1Ede8;
+    box-sizing:border-box;
+    padding: 50px;
+    color: #352D39;
+    font-family: "lemon milk";
 }

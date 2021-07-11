@@ -43,6 +43,7 @@ const GiftForm = () => {
                     <div>
                         <label className='giftLabel'> Gift Name</label>
                         <input
+                        placeholder='ex: Wallet'
                         className='giftInput'
                         type='text'
                         name='gift_name'
@@ -53,6 +54,7 @@ const GiftForm = () => {
                     <div>
                         <label className='giftLabel'> Gift Description</label>
                         <input
+                        placeholder='ex: Trifold Wallet'
                         className='giftInput'
                         type='text'
                         name='gift_description'
@@ -63,6 +65,7 @@ const GiftForm = () => {
                     <div>
                         <label className='giftLabel'> Gift Link</label>
                         <input
+                        placeholder='ex: www.wallet.com/'
                         className='giftInput'
                         type='text'
                         name='gift_link'
@@ -70,7 +73,9 @@ const GiftForm = () => {
                         value={gift_link}
                         ></input>
                     </div>
-                    <button className='addGiftBtn' type='submit' >Add</button>
+                    <div className='GiftBtnContainer'>
+                        <button className='GiftBtn' type='submit' >Add</button>
+                    </div>
                 </form>
             </div>
         </>
