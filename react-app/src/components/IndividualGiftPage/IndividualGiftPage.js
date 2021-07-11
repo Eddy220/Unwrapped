@@ -54,7 +54,7 @@ const Gifts = () => {
                             {giftlist[id]?.id === gift.list_id &&
                             <>
                             { ifcurrentuserownslist.current = true }
-                            <button className='singleGiftDeleteButton' onClick={(event) => delGift(event, gift)}> X </button>
+                            <button className='singleGiftDeleteButton' onClick={(event) => delGift(event, gift)}>❌</button>
                             <NavLink className='editGiftButton' to={`/editgift/${gift.id}`}>Edit Gift</NavLink>
                             </>
                             }

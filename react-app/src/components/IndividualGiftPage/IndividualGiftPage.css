@@ -93,7 +93,8 @@
     border: none;
     background: none;
     cursor: pointer;
-    font-family: "lemon milk"
+    font-family: "lemon milk";
+    font-size: 10px;
 }
 
 .singleGiftDeleteButton:hover {
@@ -102,9 +103,9 @@
     border: none;
     background: none;
     cursor: pointer;
-    color: red;
     font-weight:bolder;
-    font-family: "lemon milk"
+    font-family: "lemon milk";
+    font-size: 13px;
 }
 
 .addSingleGiftContainer {
