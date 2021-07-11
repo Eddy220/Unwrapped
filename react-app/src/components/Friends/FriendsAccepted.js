@@ -25,7 +25,6 @@ const FriendsAccepted = () => {
     const friends = useSelector(state => {
         let incomingfriendrequests = []
         Object.keys(state.user.friends.incomingfriends).map((key) => {
-            let accepter = state.user.friends.incomingfriends[key].accepter_id
             let status = state.user.friends.incomingfriends[key].status
             let friend = state.user.friends.incomingfriends[key].requester_id
             if (status == true) {
