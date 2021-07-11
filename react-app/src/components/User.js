@@ -9,12 +9,10 @@ function User() {
   const dispatch = useDispatch()
   const [user, setUser] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false)
-  // console.log(user.giftlists_rel, 'this is users')
   const { userId }  = useParams();
   const current_user = useSelector((state) => state.session.user)
   let giftlists = useSelector(state => Object.values(state.giftlist.giftlists))
 
-  // console.log(giftlists)
 
   useEffect(() => {
     if (!userId) {

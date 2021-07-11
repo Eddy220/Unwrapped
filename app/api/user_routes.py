@@ -94,4 +94,4 @@ def accepted_friends(id):
     accepted_user = Friend.query.filter(Friend.requester == id, Friend.accepter == current_user.id).first()
     accepted_user.status = True
     db.session.commit()
-    return accepted_user
+    return {}

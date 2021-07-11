@@ -54,7 +54,7 @@ const FriendsAccepted = () => {
         console.log(id)
         const data = await dispatch(makeFriend(id))
         history.push('/home')
-        history.go(0)
+        // history.go(0)
     }
 
     return (
