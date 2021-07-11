@@ -27,10 +27,14 @@ const FriendsAccepted = () => {
     const friends = useSelector(state => {
         let incomingfriendrequests = []
         Object.keys(state.user.friends.incomingfriends).map((key) => {
+            let accepter = state.user.friends.incomingfriends[key].accepter_id
             let status = state.user.friends.incomingfriends[key].status
             let friend = state.user.friends.incomingfriends[key].requester_id
-            if (status == true) {
+            if (status == true && friend != user.id) {
                 incomingfriendrequests.push(friend)
+            }
+            if (status == true && accepter != user.id) {
+                incomingfriendrequests.push(accepter)
             }
         })
         return incomingfriendrequests
@@ -58,17 +62,18 @@ const FriendsAccepted = () => {
 
     return (
         <>
-            <div className='testcontainer1'> Friends:
+        <div className='FriendsOuter'>
+            <div className='FriendsContainer'> Friends:
                 {friends.map((id) => {
                     return (
                         <>
-                            <Link to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
+                            <Link className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
                         </>
 
                     )
                 })}
             </div>
-            <div className='testcontainer1'> Friend Requests:
+            <div className='FriendsContainer'> Friend Requests:
                 {requester_user.map((id) => {
                     return (
                         <>
@@ -78,9 +83,7 @@ const FriendsAccepted = () => {
                     )
                 })}
             </div>
-            <div>
-
-            </div>
+        </div>
         </>
     )
 }

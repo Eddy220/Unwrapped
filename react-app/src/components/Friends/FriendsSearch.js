@@ -51,14 +51,20 @@ const FriendsSearch = () => {
 
     return (
         <>
-        <div className='SearchContainer'>
-            <input
-            value={username}
-            onChange={e=> {setUsername(e.target.value)}}
-            ></input>
-            <button onClick={searchButton}>Search</button>
-            {searchedUserid && <Link to={`/users/${searchedUserid}`}>Go to {username}</Link>}
-            {searchedUserid && <button onClick={requestButton}>Request Friend</button>}
+        <div className='Friends'>
+            <div className='SearchOuter'>
+                <div className='SearchContainerTitle'>Search for your Friends</div>
+                <div className='SearchContainer'>
+                    <input
+                    className='SearchInput'
+                    value={username}
+                    onChange={e=> {setUsername(e.target.value)}}
+                    ></input>
+                    <button className='SearchButton'onClick={searchButton}>Search</button>
+                    {searchedUserid && <Link className='SearchGoToProfile'to={`/users/${searchedUserid}`}>Go to {username}</Link>}
+                    {searchedUserid && <button className='SearchRequest' onClick={requestButton}>Request Friend</button>}
+                </div>
+            </div>
         </div>
         <FriendsAccepted />
         </>

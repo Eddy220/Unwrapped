@@ -1,3 +1,114 @@
+@font-face{
+    font-family: "lemon milk";
+    src: url("../../LEMONMILK-Regular.otf") format("truetype");
+  }
+
+.Friends {
+    display: flex;
+    justify-content: center;
+}
+
+.SearchOuter {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    background: #FF6978;
+    border: none;
+    padding: 50px;
+    width: 75%;
+    flex-direction: column;
+}
+
+.SearchContainerTitle {
+    display: flex;
+    justify-content: center;
+    font-family: "lemon milk";
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.SearchButton {
+    width: 10%;
+    background: #457b9d;
+    color: white;
+    font-family: "lemon milk";
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.SearchButton:hover {
+    width: 10%;
+    background: black;
+    color: white;
+    font-family: "lemon milk";
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.SearchInput {
+    width: 25%;
+    height: 25px;
+    margin-right: 25px;
+    border-radius: 25px;
+}
+
 .SearchContainer {
-    margin: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.SearchGoToProfile {
+    margin-left: 50px;
+    width: 10%;
+    background: #457b9d;
+    color: white;
+    font-family: "lemon milk";
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.SearchGoToProfile:hover {
+    margin-left: 50px;
+    width: 10%;
+    background: black;
+    color: white;
+    font-family: "lemon milk";
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.SearchRequest {
+    margin-left: 50px;
+    width: 10%;
+    background: #457b9d;
+    color: white;
+    font-family: "lemon milk";
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.SearchRequest:hover {
+    margin-left: 50px;
+    width: 10%;
+    background: black;
+    color: white;
+    font-family: "lemon milk";
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
 }

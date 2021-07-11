@@ -29,7 +29,7 @@ const UpcomingDates = () => {
 
     return isLoaded && (
         <>
-            <div className='UpcomingDatesContainer'> Friend Birthdays:
+            <div className='UpcomingDatesContainer'> Birthdays:
                 {friends.map((id) => {
                     return (
                         <div className='UpcomingDates' key={id}>{users[id].full_name}: {users[id].birthday.toString().slice(4,16)}</div>

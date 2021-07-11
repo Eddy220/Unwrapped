@@ -1,3 +1,31 @@
-.testcontainer1 {
-    margin: 10%;
+@font-face{
+    font-family: "lemon milk";
+    src: url("../../LEMONMILK-Regular.otf") format("truetype");
+  }
+
+.FriendsOuter {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.FriendsContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+    background: #B1EDe8;
+    height: 200px;
+    width: 200px;
+    margin-top: -75px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-family: "lemon milk";
+    overflow-y: scroll;
+}
+
+.FriendsLinks {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #e53945;
 }
