@@ -40,9 +40,9 @@ const Gifts = () => {
                 <div className='giftContainer'>
                     <div className='giftContainerName'>{giftlist[id]?.list_name}</div>
                     <div className='giftContainerLabelsContainer'>
-                        <div className='giftContainerLabels'>Gift  </div>
-                        <div className='giftContainerLabels'>Description  </div>
-                        <div className='giftContainerLabels'>Link  </div>
+                        <div className='giftContainerLabels'>Gift </div>
+                        <div className='giftContainerLabels'>Description </div>
+                        <div className='giftContainerLabels'>Link </div>
                     </div>
                     {gifts.map((gift) =>
                         <div className='singleGift'>
