@@ -8,7 +8,7 @@ import './IndividualGiftPage.css'
 const Gifts = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    // const current_user = useSelector((state) => state.session.user)
+    const current_user = useSelector((state) => state.session.user)
     const giftlist = useSelector((state => state.giftlist.giftlists))
     console.log(giftlist, 'this is the giftlists id')
     let gifts = useSelector(state => Object.values(state.gift.gifts))
@@ -16,7 +16,7 @@ const Gifts = () => {
     const [gift_description, setGiftDescription] = useState('')
     const [gift_link, setGiftLink] = useState('')
     const [purchased, setPurchased] = useState(false)
-    const ifcurrentuserownslist = useRef()
+    // const ifcurrentuserownslist = useRef()
 
     const delGift = async (event, gift) => {
         event.preventDefault()
@@ -29,8 +29,6 @@ const Gifts = () => {
        await dispatch(obtainGiftlists())
     }, [])
 
-    // console.log(id)
-    // console.log(giftlist[id])
 
 
 
@@ -53,7 +51,7 @@ const Gifts = () => {
                             {/* <input className='giftContainerLabels' id='purchased' type='checkbox' name='purchased'></input> */}
                             {giftlist[id]?.id === gift.list_id &&
                             <>
-                            { ifcurrentuserownslist.current = true }
+                            {/* { ifcurrentuserownslist.current = true } */}
                             <button className='singleGiftDeleteButton' onClick={(event) => delGift(event, gift)}>❌</button>
                             <NavLink className='editGiftButton' to={`/editgift/${gift.id}`}>Edit Gift</NavLink>
                             </>
@@ -63,9 +61,11 @@ const Gifts = () => {
                 </div>
             </div>
             <div className='addSingleGiftContainer'>
-                { ifcurrentuserownslist.current &&
-                <NavLink className='addGiftButton' to={`/gifts/${id}/giftform`}> A D D </NavLink>
+                {/* { ifcurrentuserownslist.current && */}
+                { giftlist[id]?.user_id === current_user.id &&
+                    <NavLink className='addGiftButton' to={`/gifts/${id}/giftform`}> A D D </NavLink>
                 }
+                {/* } */}
             </div>
         </>
     )
