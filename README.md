@@ -1,134 +1,29 @@
-# Flask React Project
+# Unwrapped 
+Developer: Edward(Eddy) Kim - [Visit Unwrapped](https://unwrapped-app.herokuapp.com/)
 
-This is the starter for the Flask React project.
 
-## Getting started
+<em>Table of Contents</em>
+- What is Unwrapped?
+- Technologies Used
+- Conclusion & Moving Forward
 
-1. Clone this repository (only this branch)
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+## What is Unwrapped?
 
-2. Install dependencies
+Unwrapped is a polished full-stack web application that allows users to create and organize gift wishlists for friends, family, etc. The application can be used for any kind of occasion, such as birthdays, wedding registries, or even housewarming gifts. Users will be able to stop guessing, and start giving the perfect gift.
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+![](https://github.com/Eddy220/Unwrapped/blob/main/READMEDocs/UnwrappedSplash.jpeg)
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+## Technologies Used
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+Unwrapped was built using Python with Flask as its backend framework and SQLAlchemy as its ORM. Unwrapped uses Javascript, React, and Redux as its frontend, using both Python and Javascript through the use of proxy.
 
-   ```bash
-   pipenv shell
-   ```
+## Conclusion & Moving Forward
 
-   ```bash
-   flask db upgrade
-   ```
+Unwrapped was an application that I had set, in my mind, since the beginning of my software engineering journey. From the beginning to the end, it was a project that was always challenging and inspiring me to continue learning and adapting through success and failure. This project comes from a personal experience of never knowing what to get my friends/family on their birthday or Christmas. To avoid that awkward moment of asking, this was an idea that came in mind, having a platform to share and create wish lists that are so specific, you dont't have to do anything but click that link. I am excited to share this with my group of friends and be ableto find ways to upgrade the application moving forward.
 
-   ```bash
-   flask seed all
-   ```
+Another note, I loved seeing my personal growth and self-doubt dissipate throughout the process of the development. It was exciting to understand how certain code worked and didn't work, while going back and forth between documentation and past notes. This is what I believe is the success found in projects like this, self confidence. 
 
-   ```bash
-   flask run
-   ```
+Moving forward, I would love to implement a way of making sure that the application can track if a gift has already been purchased by another friend/family member/coworker/etc. This would prevent duplicate gifts for a user, and create more functioanlity to the application, with smoother user experience. I have already implemented a purchased data type field set to a boolean in the database, and will move forward with this functiaonlity, by storing it in the redux store and accessing the saved state data. Possibly, by using a checkmark input box. I am very excited to continue with the project.
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
-
-## Deploy to Heroku
-
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
-
-   ```bash
-   heroku login
-   ```
-
-6. Login to the heroku container registry
-
-   ```bash
-   heroku container:login
-   ```
-
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
-
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
-
-9. Release your docker container to heroku
-
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
-
-10. set up your database
-
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
-
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
-
-12. profit
-
-### For M1 Mac users
-
-(Replaces **Step 8**)
-
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
-
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
-
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+Thanks for sticking this long! Please contact me on my [LinkedIn](https://www.linkedin.com/in/edward-kim-a97538215/) !
