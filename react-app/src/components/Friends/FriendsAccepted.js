@@ -3,6 +3,7 @@ import { getAllUsers, makeFriend, obtainFriends } from '../../store/user';
 import { useDispatch, useSelector } from 'react-redux';
 import './FriendsAccepted.css'
 import { Link, useHistory } from "react-router-dom"
+import gift from '../../../src/images/z-gift.png'
 
 const FriendsAccepted = () => {
     const dispatch = useDispatch()
@@ -72,6 +73,9 @@ const FriendsAccepted = () => {
 
                     )
                 })}
+            </div>
+            <div className='FriendsContainerImage'>
+                <img className='FriendsImage' src={gift}></img>
             </div>
             <div className='FriendsContainer'> Friend Requests:
                 {requester_user.map((id) => {
