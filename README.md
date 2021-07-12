@@ -12,6 +12,8 @@ Developer: Edward(Eddy) Kim - [Visit Unwrapped](https://unwrapped-app.herokuapp.
 
 Unwrapped is a polished full-stack web application that allows users to create and organize gift wishlists for friends, family, etc. The application can be used for any kind of occasion, such as birthdays, wedding registries, or even housewarming gifts. Users will be able to stop guessing, and start giving the perfect gift.
 
+![](https://github.com/Eddy220/Unwrapped/blob/main/READMEDocs/UnwrappedSplash.jpeg)
+
 ## Technologies Used
 
 Unwrapped was built using Python with Flask as its backend framework and SQLAlchemy as its ORM. Unwrapped uses Javascript, React, and Redux as its frontend, using both Python and Javascript through the use of proxy.
