@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { login } from '../../store/session';
+import { login, demologin } from '../../store/session';
 import './Login.css'
 
 const LoginForm = () => {
@@ -18,6 +18,11 @@ const LoginForm = () => {
       setErrors(data);
     }
   };
+
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(demologin());
+  }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -60,6 +65,7 @@ const LoginForm = () => {
         />
       </div>
       <button className='navBtns' type='submit'>Login</button>
+      <button className='navBtns' onClick={demoLogin}>Demo</button>
     </form>
     </div>
   );

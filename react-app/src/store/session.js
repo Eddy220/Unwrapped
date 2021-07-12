@@ -35,6 +35,22 @@ export const authenticate = () => async (dispatch) => {
   }
 }
 
+export const demologin = () => async (dispatch) => {
+  const response = await fetch('/api/auth/login/demo', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+
+  const data = await response.json();
+  if (data.errors) {
+    return data;
+  }
+  dispatch(setUser(data))
+  return {}
+}
+
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
     method: 'POST',

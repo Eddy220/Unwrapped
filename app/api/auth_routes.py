@@ -27,6 +27,11 @@ def authenticate():
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}
 
+@auth_routes.route('/login/demo', methods=['POST'])
+def demo_login():
+    user = User.query.filter(User.username == 'Demo').first()
+    login_user(user)
+    return user.to_dict()
 
 @auth_routes.route('/login', methods=['POST'])
 def login():
