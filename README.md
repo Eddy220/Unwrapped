@@ -5,6 +5,7 @@ Developer: Edward(Eddy) Kim - [Visit Unwrapped](https://unwrapped-app.herokuapp.
 <em>Table of Contents</em>
 - What is Unwrapped?
 - Technologies Used
+- Conclusion & Moving Forward
 
 
 ## What is Unwrapped?
