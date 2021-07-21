@@ -54,7 +54,7 @@ export const makeGift = (payload) => async (dispatch) => {
     })
 
     const data = await res.json();
-    console.log(data, 'this is data')
+    // console.log(data, 'this is data')
 
     if (data.errors) {
         return data
@@ -72,7 +72,7 @@ export const deleteGift = (payload) => async (dispatch) => {
             "Content-Type": "application/json",
         },
     })
-    console.log(res)
+    // console.log(res)
 
     const data = await res.json();
 
@@ -131,7 +131,7 @@ export default function reducer(state = initialState, action) {
         case REMOVE_GIFT:
             newState = {...state}
             let giftState = newState.gifts
-            console.log(action.payload)
+            // console.log(action.payload)
             delete giftState[action.payload.id]
             return newState;
         case EDIT_GIFT:

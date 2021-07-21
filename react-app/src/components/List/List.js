@@ -40,8 +40,8 @@ const Giftlists = () => {
         <div className='listPageContainer'>
             <div className='listContainer'>
                 {/* <NavLink to='/' className='lists'> */}
-                    {giftlists.map((giftlist) =>
-                        <div className='listNameDelete'>
+                    {giftlists.slice(0,5).map((giftlist) =>
+                        <div key={giftlist} className='listNameDelete'>
                             <NavLink to={`/gifts/${giftlist.id}`} className='listnames' >{giftlist.list_name} </NavLink>
                             <button className='deleteListBtn' onClick={(event)=> delGiftlist(event, giftlist)}>❌</button>
                         </div>

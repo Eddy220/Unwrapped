@@ -38,8 +38,8 @@ def edit_user(id):
     if form.validate_on_submit():
         user = User.query.filter(User.id == current_user.id).first()
         # user = current_user
-        print(user, 'hey this is user!!')
-        print(user.username)
+        # print(user, 'hey this is user!!')
+        # print(user.username)
         user_username = form.data['username']
         user_full_name = form.data['full_name']
         user_email = form.data['email']
@@ -62,8 +62,8 @@ def edit_user(id):
 def search_user(id):
     user = User.query.get(id)
     # print(user.__dict__, 'this is user')
-    print(user.requester_rel)
-    print(user.accepter_rel)
+    # print(user.requester_rel)
+    # print(user.accepter_rel)
     return user.to_dict()
 
 

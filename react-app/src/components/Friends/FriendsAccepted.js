@@ -61,6 +61,10 @@ const FriendsAccepted = () => {
         // history.go(0)
     }
 
+    useEffect(() => {
+        dispatch(obtainFriends())
+    }, [dispatch])
+
     return (
         <>
         <div className='FriendsOuter'>
@@ -68,7 +72,7 @@ const FriendsAccepted = () => {
                 {friends.map((id) => {
                     return (
                         <>
-                            <Link className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
+                            <Link key={id} className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
                         </>
 
                     )

@@ -9,7 +9,7 @@ const EditUser = () => {
     let { id } = useParams()
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
-    console.log(user)
+    // console.log(user)
     const history = useHistory()
     const [username, setUsername] = useState(user?.username)
     const [full_name, setFullname] = useState(user?.full_name)
