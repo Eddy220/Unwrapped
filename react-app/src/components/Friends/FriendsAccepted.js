@@ -85,7 +85,7 @@ const FriendsAccepted = () => {
                 {requester_user.map((id) => {
                     return (
                         <>
-                            <div>{users[id]?.username}</div>
+                            <Link key={id} className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
                             <button type='button' key={id} value={id} onClick={friendsAcceptedSubmit}>Accept</button>
                         </>
                     )

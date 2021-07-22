@@ -64,7 +64,8 @@
     width: 10%;
     background: #457b9d;
     color: white;
-    font-family: "lemon milk";
+    /* font-family: "lemon milk"; */
+    font-family:Arial, Helvetica, sans-serif;
     border-radius: 25px;
     border: none;
     cursor: pointer;
@@ -80,7 +81,8 @@
     width: 10%;
     background: black;
     color: white;
-    font-family: "lemon milk";
+    /* font-family: "lemon milk"; */
+    font-family:Arial, Helvetica, sans-serif;
     border-radius: 25px;
     border: none;
     cursor: pointer;
