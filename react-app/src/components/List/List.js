@@ -27,6 +27,7 @@ const Giftlists = () => {
     const onSubmit = async (event) => {
         event.preventDefault()
         const add = await dispatch(postGiftlist({list_name}))
+        setGiftlist('')
     }
 
     useEffect(() => {
