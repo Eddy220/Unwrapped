@@ -9,10 +9,12 @@ import { Link } from "react-router-dom"
 const FriendsSearch = () => {
     const dispatch = useDispatch()
     const users = useSelector(state => (state.user))
+    const user = useSelector((state) => state.session.user)
     const [username, setUsername] = useState('')
     const [searchedUserid, setSearchedUserid] = useState(null)
     const [request, setRequest] = useState()
     const usersArray = Object.values(users)
+    const [isLoaded, setIsLoaded] = useState(false)
 
     // console.log(usersArray)
     // console.log(Object.values(usersArray))
@@ -42,9 +44,15 @@ const FriendsSearch = () => {
         alert("Your request has been successfully sent!")
     }
 
-    useEffect(() => {
-        dispatch(obtainFriends())
+    useEffect(async () => {
+        await dispatch(getAllUsers())
+        await dispatch(obtainFriends())
     }, [dispatch])
+
+    // useEffect(() => {
+    //     if (user && users) {
+    //         setIsLoaded(true)
+    // }}, [users])
 
     // console.log(searchedUser)
     // console.log(searchedUserid)

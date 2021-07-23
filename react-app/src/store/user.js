@@ -77,7 +77,7 @@ export const makeFriend = (payload) => async (dispatch) => {
 
 // Initial State
 
-const initalState = {users: {}, friends: {}}
+const initalState = {friends: {}}
 
 
 // Reducer

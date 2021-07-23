@@ -14,6 +14,7 @@ const FriendsAccepted = () => {
     const users = useSelector(state => state.user)
     const requester_user = useSelector(state => {
         let incomingfriendrequests = []
+        if (!state.user.friends.incomingfriends) return null
         Object.keys(state.user.friends.incomingfriends).map((key) => {
             let accepter = state.user.friends.incomingfriends[key].accepter_id
             let status = state.user.friends.incomingfriends[key].status
@@ -27,6 +28,7 @@ const FriendsAccepted = () => {
 
     const friends = useSelector(state => {
         let incomingfriendrequests = []
+        if (!state.user.friends.incomingfriends) return null
         Object.keys(state.user.friends.incomingfriends).map((key) => {
             let accepter = state.user.friends.incomingfriends[key].accepter_id
             let status = state.user.friends.incomingfriends[key].status
@@ -43,13 +45,13 @@ const FriendsAccepted = () => {
 
 
 
-    const incomingfriends = requester_user.map(requester => {
+    const incomingfriends = requester_user? requester_user.map(requester => {
         return requester?.incomingfriends
-    })
+    }) : null
 
-    const comingfriends = friends.map(friend => {
+    const comingfriends = friends? friends.map(friend => {
         return friend?.incomingfriends
-    })
+    }) : null
 
 
     const friendsAcceptedSubmit = async (e) => {
@@ -61,15 +63,14 @@ const FriendsAccepted = () => {
         // history.go(0)
     }
 
-    useEffect(() => {
-        dispatch(obtainFriends())
-    }, [dispatch])
+
 
     return (
         <>
         <div className='FriendsOuter'>
             <div className='FriendsContainer'> Friends:
-                {friends.map((id) => {
+                {friends && friends.map((id) => {
+                    console.log(friends, 'hey')
                     return (
                         <>
                             <Link key={id} className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
@@ -82,7 +83,7 @@ const FriendsAccepted = () => {
                 <img className='FriendsImage' src={gift}></img>
             </div>
             <div className='FriendsContainer'> Friend Requests:
-                {requester_user.map((id) => {
+                {requester_user && requester_user.map((id) => {
                     return (
                         <>
                             <Link key={id} className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
