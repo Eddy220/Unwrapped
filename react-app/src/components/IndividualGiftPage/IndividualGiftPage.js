@@ -47,7 +47,7 @@ const Gifts = () => {
                         <div className='singleGift'>
                             <div className='singleGiftLabels'>{gift.gift_name}</div>
                             <div className='singleGiftLabels'>{gift.gift_description}</div>
-                            <a className='singleGiftLabelsLink' href={`${gift.gift_link}`}> {gift.gift_link} </a>
+                            <a className='singleGiftLabelsLink' href={`https://${gift.gift_link}`}> GIFT </a>
                             {/* <input className='giftContainerLabels' id='purchased' type='checkbox' name='purchased'></input> */}
                             {giftlist[id]?.id === gift.list_id &&
                             <>
