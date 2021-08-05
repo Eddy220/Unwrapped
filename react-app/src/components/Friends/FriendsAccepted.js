@@ -66,10 +66,12 @@ const FriendsAccepted = () => {
     const friendsDeleteSubmit = async (e) => {
         e.preventDefault()
         const id = e.target.value
+        // console.log(id, 'this is the ID!!!')
         const data = await dispatch(deleteFriend(id))
         history.push('/friends')
         history.go(0)
     }
+    // console.log(friends, 'hey this is friends')
 
     return (
         <>

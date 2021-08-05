@@ -129,8 +129,6 @@ export default function reducer(state = initalState, action) {
         case DELETE_FRIEND:
             newState = {...state}
             let deleteState = newState.friends
-            console.log(deleteState, 'hey')
-            console.log(action.payload, 'hey')
             delete deleteState[action.payload.id]
             return newState;
         default:
