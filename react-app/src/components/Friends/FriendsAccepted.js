@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { getAllUsers, makeFriend, obtainFriends } from '../../store/user';
+import { getAllUsers, makeFriend, obtainFriends, deleteFriend } from '../../store/user';
 import { useDispatch, useSelector } from 'react-redux';
 import './FriendsAccepted.css'
 import { Link, useHistory } from "react-router-dom"
@@ -59,21 +59,27 @@ const FriendsAccepted = () => {
         const id = e.target.value
         console.log(id)
         const data = await dispatch(makeFriend(id))
-        history.push('/home')
-        // history.go(0)
+        history.push('/friends')
+        history.go(0)
     }
 
-
+    const friendsDeleteSubmit = async (e) => {
+        e.preventDefault()
+        const id = e.target.value
+        const data = await dispatch(deleteFriend(id))
+        history.push('/friends')
+        history.go(0)
+    }
 
     return (
         <>
         <div className='FriendsOuter'>
             <div className='FriendsContainer'> Friends:
                 {friends && friends.map((id) => {
-                    console.log(friends, 'hey')
                     return (
                         <>
                             <Link key={id} className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
+                            <button className='friendButton' type='button' key={id} value={id} onClick={friendsDeleteSubmit}>Remove</button>
                         </>
 
                     )
@@ -87,7 +93,10 @@ const FriendsAccepted = () => {
                     return (
                         <>
                             <Link key={id} className='FriendsLinks'to={`/users/${users[id].id}`}>{users[id]?.username}</Link>
-                            <button type='button' key={id} value={id} onClick={friendsAcceptedSubmit}>Accept</button>
+                            <div className='friendButtons'>
+                                <button className='friendButton' type='button' key={id} value={id} onClick={friendsAcceptedSubmit}>Accept</button>
+                                <button className='friendButton' type='button' key={id} value={id} onClick={friendsDeleteSubmit}>Cancel</button>
+                            </div>
                         </>
                     )
                 })}

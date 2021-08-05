@@ -4,6 +4,7 @@ const ADD_USER = "user/ADD_USER"
 const GET_FRIENDS = "user/GET_FRIENDS"
 const ADD_ACCEPTED = "user/ADD_ACCEPTED"
 const GET_USERS = "user/GET_USERS"
+const DELETE_FRIEND = "users/DELETE_FRIEND"
 
 // Action Creators
 const getUser = (payload) => ({
@@ -29,6 +30,11 @@ const addAccepted = (payload) => ({
 const getUsers = (users) => ({
     type: GET_USERS,
     users: users
+})
+
+const delFriend = (payload) => ({
+    type: DELETE_FRIEND,
+    payload
 })
 
 // Thunks
@@ -75,6 +81,19 @@ export const makeFriend = (payload) => async (dispatch) => {
     return data
 }
 
+export const deleteFriend = (payload) => async (dispatch) => {
+    const id = payload
+    const res = await fetch(`/api/users/accepted/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await res.json()
+    dispatch(delFriend(data))
+    return data;
+}
+
 // Initial State
 
 const initalState = {friends: {}}
@@ -107,6 +126,11 @@ export default function reducer(state = initalState, action) {
             newState = {...state}
             newState.friends = {...state.friends, ...action.payload}
             return newState
+        case DELETE_FRIEND:
+            newState = {...state}
+            let deleteState = newState.friends
+            delete deleteState[action.payload.id]
+            return newState;
         default:
             return state;
     }

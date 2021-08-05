@@ -35,3 +35,20 @@
     height: 100px;
     width: 100px;
 }
+
+.friendButton {
+    background-color: #457b9d;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    margin: 1px;
+}
+
+.friendButton:hover {
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    margin: 1px;
+    cursor: pointer;
+}
