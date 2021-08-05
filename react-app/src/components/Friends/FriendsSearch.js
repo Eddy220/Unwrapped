@@ -29,9 +29,17 @@ const FriendsSearch = () => {
     const searchButton = async (e) => {
         e.preventDefault();
 
-        searchedUser = usersArray.filter(user => {
-            if (user.username === username) {
-                return user
+        let users = usersArray.slice(0,-1)
+
+        searchedUser = users.filter(user => {
+            let stringToCompare = user.username.toLowerCase()
+            let searchedString = username.toLowerCase()
+
+            if (stringToCompare.startsWith(searchedString)) {
+                return true
+            }
+            else {
+                return false
             }
         })
         setSearchedUserid(searchedUser[0].id)
