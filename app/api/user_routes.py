@@ -100,7 +100,9 @@ def accepted_friends(id):
 @user_routes.route('/accepted/<int:id>', methods=['DELETE'])
 @login_required
 def delete_friends(id):
-    accepted_user = Friend.query.filter(Friend.requester == id, Friend.accepter == current_user.id).first()
-    db.session.delete(accepted_user)
+    # relationship = Friend.query.filter(Friend.requester == id, Friend.accepter == current_user.id).first()
+    relationship = Friend.query.filter_by(id=Friend.id).first()
+    print(relationship, 'HOLA')
+    db.session.delete(relationship)
     db.session.commit()
     return {}
